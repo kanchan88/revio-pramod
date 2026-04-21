@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revio — Minimalist reviews for the things you buy</title>
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Primary Nav -->
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="primary">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Revio" class="brand-logo" />
+      </a>
+
+      <div class="nav-links">
+        <!-- Mega menu: Phones -->
+        <div class="nav-item">
+          <button class="nav-trigger" aria-haspopup="true">
+            Phones
+            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mega wide" role="menu">
+            <div class="mega-body">
+              <div class="mega-left">
+                <div class="mega-col">
+                  <h4>Browse</h4>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+                    <span class="body">
+                      <span class="title">Flagship smartphones</span>
+                      <span class="desc">Top-tier cameras, chipsets and displays.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 16v6"/><rect x="3" y="8" width="18" height="8" rx="2"/></svg></span>
+                    <span class="body">
+                      <span class="title">Mid-range <span class="badge-hot">HOT</span></span>
+                      <span class="desc">Best value picks this year.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>
+                    <span class="body">
+                      <span class="title">Essentials</span>
+                      <span class="desc">Dependable daily drivers.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="M12 5v14"/></svg></span>
+                    <span class="body">
+                      <span class="title">Foldables <span class="badge-new">NEW</span></span>
+                      <span class="desc">Books, flips and dual-screen designs.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mega-col">
+                  <h4>By brand</h4>
+                  <ul class="mini-list">
+                    <li><a href="#">Apple <small>94 models</small></a></li>
+                    <li><a href="#">Samsung <small>126 models</small></a></li>
+                    <li><a href="#">Google Pixel <small>38 models</small></a></li>
+                    <li><a href="#">OnePlus <small>44 models</small></a></li>
+                    <li><a href="#">Xiaomi <small>118 models</small></a></li>
+                    <li><a href="#">Nothing <small>12 models</small></a></li>
+                    <li><a href="#">Motorola <small>52 models</small></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-right">
+                <a href="product.html" class="feature-card">
+                  <img src="https://picsum.photos/seed/phonefeat/900/500" alt="">
+                  <div class="overlay"></div>
+                  <div class="meta">
+                    <span class="tag">Editor's choice</span>
+                    <h5>iPhone 17 Pro review</h5>
+                    <p>The most polished camera system of the year.</p>
+                  </div>
+                </a>
+                <ul class="mini-list">
+                  <li><a href="#">Best phones of 2026 <small>List →</small></a></li>
+                  <li><a href="#">Phones with the best battery <small>List →</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <div class="links">
+                <a href="#">Rumors</a>
+                <a href="#">Buying guide</a>
+              </div>
+              <a href="category.html" class="viewall">Explore all phones
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega menu: Laptops -->
+        <div class="nav-item">
+          <button class="nav-trigger" aria-haspopup="true">
+            Laptops
+            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mega wide" role="menu">
+            <div class="mega-body">
+              <div class="mega-left">
+                <div class="mega-col">
+                  <h4>By use case</h4>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span>
+                    <span class="body">
+                      <span class="title">Ultrabooks</span>
+                      <span class="desc">Thin, light and long-lasting.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l3 6 6 .9-4.5 4.3L18 21l-6-3.3L6 21l1.5-6.8L3 9.9 9 9z"/></svg></span>
+                    <span class="body">
+                      <span class="title">Gaming laptops <span class="badge-hot">HOT</span></span>
+                      <span class="desc">RTX 50-series and OLED panels.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
+                    <span class="body">
+                      <span class="title">Creator workstations</span>
+                      <span class="desc">Colour-accurate displays and beefy GPUs.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h16M4 16h16"/><path d="M8 4v16M16 4v16"/></svg></span>
+                    <span class="body">
+                      <span class="title">2-in-1 convertibles</span>
+                      <span class="desc">Touchscreens that fold all the way back.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mega-col">
+                  <h4>By brand</h4>
+                  <ul class="mini-list">
+                    <li><a href="#">Apple MacBook <small>24 models</small></a></li>
+                    <li><a href="#">Dell XPS <small>31 models</small></a></li>
+                    <li><a href="#">Lenovo ThinkPad <small>67 models</small></a></li>
+                    <li><a href="#">ASUS ROG / Zenbook <small>58 models</small></a></li>
+                    <li><a href="#">HP Spectre / Omen <small>44 models</small></a></li>
+                    <li><a href="#">Framework <small>6 models</small></a></li>
+                    <li><a href="#">Razer Blade <small>14 models</small></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-right">
+                <a href="#" class="feature-card">
+                  <img src="https://picsum.photos/seed/laptopfeat/900/500" alt="">
+                  <div class="overlay"></div>
+                  <div class="meta">
+                    <span class="tag">Benchmark report</span>
+                    <h5>M4 Pro vs Ryzen AI 9</h5>
+                    <p>We ran 14 workloads — here's what won.</p>
+                  </div>
+                </a>
+                <ul class="mini-list">
+                  <li><a href="#">Best laptops for developers <small>List →</small></a></li>
+                  <li><a href="#">Benchmark explorer <small>Tool →</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <div class="links">
+                <a href="#">Student picks</a>
+                <a href="#">Battery leaders</a>
+              </div>
+              <a href="category.html" class="viewall">Explore all laptops
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega menu: Cars -->
+        <div class="nav-item">
+          <button class="nav-trigger" aria-haspopup="true">
+            Cars
+            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mega wide" role="menu">
+            <div class="mega-body">
+              <div class="mega-left">
+                <div class="mega-col">
+                  <h4>By powertrain</h4>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7v8l9-12h-7z"/></svg></span>
+                    <span class="body">
+                      <span class="title">Electric (EV)</span>
+                      <span class="desc">Range, charging speed, real-world MPGe.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></span>
+                    <span class="body">
+                      <span class="title">Hybrid / PHEV</span>
+                      <span class="desc">Best of both worlds — if you size it right.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><circle cx="7" cy="15" r="2"/><circle cx="17" cy="15" r="2"/></svg></span>
+                    <span class="body">
+                      <span class="title">Petrol & Diesel</span>
+                      <span class="desc">ICE classics with proven reliability.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h12l4 6H4z"/><path d="M20 12v6H4v-6"/></svg></span>
+                    <span class="body">
+                      <span class="title">SUVs & Trucks</span>
+                      <span class="desc">Family haulers and weekend rigs.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mega-col">
+                  <h4>By make</h4>
+                  <ul class="mini-list">
+                    <li><a href="#">Tesla <small>7 models</small></a></li>
+                    <li><a href="#">Toyota <small>32 models</small></a></li>
+                    <li><a href="#">BMW <small>28 models</small></a></li>
+                    <li><a href="#">Hyundai / Kia <small>41 models</small></a></li>
+                    <li><a href="#">Rivian <span class="badge-new">NEW</span></a></li>
+                    <li><a href="#">BYD <small>18 models</small></a></li>
+                    <li><a href="#">Ford <small>24 models</small></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-right">
+                <a href="#" class="feature-card">
+                  <img src="https://picsum.photos/seed/carfeat/900/500" alt="">
+                  <div class="overlay"></div>
+                  <div class="meta">
+                    <span class="tag">Long-term test</span>
+                    <h5>10,000 miles in a Model 3</h5>
+                    <p>What's held up, what hasn't.</p>
+                  </div>
+                </a>
+                <ul class="mini-list">
+                  <li><a href="#">EV range calculator <small>Tool →</small></a></li>
+                  <li><a href="#">Safety score explorer <small>Tool →</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <div class="links">
+                <a href="#">New 2026 models</a>
+                <a href="#">Reliability</a>
+              </div>
+              <a href="category.html" class="viewall">Explore all cars
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mega menu: Gadgets -->
+        <div class="nav-item">
+          <button class="nav-trigger" aria-haspopup="true">
+            Gadgets
+            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="mega wide" role="menu">
+            <div class="mega-body">
+              <div class="mega-left">
+                <div class="mega-col">
+                  <h4>Wearables & Audio</h4>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="7" width="12" height="10" rx="2"/><path d="M9 3h6l-.5 4h-5zM9 17l-.5 4h6l-.5-4"/></svg></span>
+                    <span class="body">
+                      <span class="title">Smartwatches</span>
+                      <span class="desc">Health, fitness and battery-life leaders.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="5" height="8" rx="1.5"/><rect x="16" y="12" width="5" height="8" rx="1.5"/></svg></span>
+                    <span class="body">
+                      <span class="title">Headphones & earbuds</span>
+                      <span class="desc">ANC, spatial audio and codec support.</span>
+                    </span>
+                  </a>
+                  <a href="category.html" class="mega-link">
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg></span>
+                    <span class="body">
+                      <span class="title">Smart rings <span class="badge-new">NEW</span></span>
+                      <span class="desc">The smallest health trackers we've tested.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mega-col">
+                  <h4>Home & outdoor</h4>
+                  <ul class="mini-list">
+                    <li><a href="#">Drones</a></li>
+                    <li><a href="#">Action cameras</a></li>
+                    <li><a href="#">Streaming sticks</a></li>
+                    <li><a href="#">Robot vacuums</a></li>
+                    <li><a href="#">Smart displays</a></li>
+                    <li><a href="#">E-readers</a></li>
+                    <li><a href="#">Portable speakers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-right">
+                <a href="#" class="feature-card">
+                  <img src="https://picsum.photos/seed/gadgetfeat/900/500" alt="">
+                  <div class="overlay"></div>
+                  <div class="meta">
+                    <span class="tag">Best of 2026</span>
+                    <h5>The only 9 earbuds worth buying</h5>
+                    <p>Tested across 40 hours of commutes.</p>
+                  </div>
+                </a>
+                <ul class="mini-list">
+                  <li><a href="#">Battery champions <small>List →</small></a></li>
+                  <li><a href="#">Suggest a review <small>Form →</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <div class="links">
+                <a href="#">Editor's picks</a>
+              </div>
+              <a href="category.html" class="viewall">Explore all gadgets
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav-trigger" href="compare.html">Compare</a>
+      </div>
+
+      <button class="search-trigger" aria-label="Open search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="label">Search products, brands, reviews…</span>
+        <span class="kbd">⌘K</span>
+      </button>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a href="#" class="btn ghost">Sign in</a>
+        <a href="#" class="btn primary">Get app</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> 12,480 products reviewed · updated daily</div>
+    <h1>Honest reviews for <em>every screen, engine and everything between.</em></h1>
+    <p class="lede">Spec-deep product reviews with a clean SaaS-style interface. Compare phones, laptops, cars and gadgets — side by side, in seconds.</p>
+    <div class="hero-search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--text-subtle)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input placeholder="Try “iPhone 17 Pro”, “Model Y vs Mach-E”…" />
+      <button class="btn primary">Search</button>
+    </div>
+    <div class="hero-trending">
+      <span>Trending:</span>
+      <a href="product.html" class="chip">iPhone 17 Pro</a>
+      <a href="#" class="chip">Galaxy S26</a>
+      <a href="#" class="chip">MacBook Air M4</a>
+      <a href="#" class="chip">Tesla Model Y Juniper</a>
+      <a href="#" class="chip">Sony WH-1000XM6</a>
+    </div>
+  </div>
+</section>
+
+<!-- Category Grid -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>Browse by category</h2>
+        <p>Jump straight into our most researched product lines.</p>
+      </div>
+      <a href="#" class="more">See all categories →</a>
+    </div>
+    <div class="cat-grid">
+      <a href="category.html" class="cat-card">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <div>
+          <h3>Phones & Tablets</h3>
+          <small>2,418 products</small>
+        </div>
+        <div class="thumb"><img src="https://picsum.photos/seed/phonecat/600/400" alt=""/></div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></div>
+        <div>
+          <h3>Laptops</h3>
+          <small>1,206 products</small>
+        </div>
+        <div class="thumb"><img src="https://picsum.photos/seed/laptopcat/600/400" alt=""/></div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><circle cx="7" cy="15" r="2"/><circle cx="17" cy="15" r="2"/><path d="M3 11h18v4H3z"/></svg></div>
+        <div>
+          <h3>Cars</h3>
+          <small>834 models</small>
+        </div>
+        <div class="thumb"><img src="https://picsum.photos/seed/carcat/600/400" alt=""/></div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div>
+          <h3>Gadgets</h3>
+          <small>Watches, audio, drones…</small>
+        </div>
+        <div class="thumb"><img src="https://picsum.photos/seed/gadgetcat/600/400" alt=""/></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Newly reviewed -->
+<section style="padding-top: 20px">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>Newly reviewed</h2>
+        <p>Fresh tests from our editors this week.</p>
+      </div>
+      <a href="category.html" class="more">All latest →</a>
+    </div>
+    <div class="card-row">
+      <a href="product.html" class="p-card">
+        <div class="img-wrap">
+          <span class="ribbon accent">Editor's choice</span>
+          <button class="add-compare" data-compare-id="iphone-17-pro" aria-label="Add to compare">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <img src="https://picsum.photos/seed/iphone17pro/600/450" alt=""/>
+        </div>
+        <div class="brand">Apple</div>
+        <h4>iPhone 17 Pro</h4>
+        <div class="specs"><span>A19 Pro</span><span>6.3″ LTPO</span><span>48MP triple</span></div>
+        <footer>
+          <span class="rating"><span class="star">★</span> 4.8/5</span>
+          <span style="font-size: 12px; color: var(--text-muted);">214 reviews</span>
+        </footer>
+      </a>
+      <a href="product.html" class="p-card">
+        <div class="img-wrap">
+          <button class="add-compare" data-compare-id="s26-ultra" aria-label="Add to compare">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <img src="https://picsum.photos/seed/s26ultra/600/450" alt=""/>
+        </div>
+        <div class="brand">Samsung</div>
+        <h4>Galaxy S26 Ultra</h4>
+        <div class="specs"><span>Snapdragon 8 Gen 5</span><span>6.9″ AMOLED</span><span>200MP</span></div>
+        <footer>
+          <span class="rating"><span class="star">★</span> 4.7/5</span>
+          <span style="font-size: 12px; color: var(--text-muted);">182 reviews</span>
+        </footer>
+      </a>
+      <a href="product.html" class="p-card">
+        <div class="img-wrap">
+          <button class="add-compare" data-compare-id="macbook-air-m4" aria-label="Add to compare">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <img src="https://picsum.photos/seed/macbookm4/600/450" alt=""/>
+        </div>
+        <div class="brand">Apple</div>
+        <h4>MacBook Air M4</h4>
+        <div class="specs"><span>M4 10-core</span><span>13.6″ LED</span><span>18h battery</span></div>
+        <footer>
+          <span class="rating"><span class="star">★</span> 4.9/5</span>
+          <span style="font-size: 12px; color: var(--text-muted);">341 reviews</span>
+        </footer>
+      </a>
+      <a href="product.html" class="p-card">
+        <div class="img-wrap">
+          <button class="add-compare" data-compare-id="model-y" aria-label="Add to compare">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <img src="https://picsum.photos/seed/modely/600/450" alt=""/>
+        </div>
+        <div class="brand">Tesla</div>
+        <h4>Model Y Juniper</h4>
+        <div class="specs"><span>Dual motor</span><span>330 mi range</span><span>0–60 in 4.1s</span></div>
+        <footer>
+          <span class="rating"><span class="star">★</span> 4.5/5</span>
+          <span style="font-size: 12px; color: var(--text-muted);">96 reviews</span>
+        </footer>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Promotional banner -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <a href="product.html" class="promo-banner">
+      <div class="promo-bg">
+        <img src="https://picsum.photos/seed/iphone17pro-banner/1800/700" alt=""/>
+      </div>
+      <div class="promo-content">
+        <div class="promo-tag"><span class="dot"></span> Latest review</div>
+        <h2>iPhone 17 Pro — the most quietly confident iPhone yet.</h2>
+        <p>A 28-day deep dive. Camera tests, sustained benchmarks, thermals, and the verdict in 8 minutes.</p>
+        <span class="promo-cta">
+          Check our latest review
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Collections -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <h2>Editor collections</h2>
+        <p>Curated shortlists we trust — updated every month.</p>
+      </div>
+      <a href="#" class="more">All collections →</a>
+    </div>
+    <div class="collections">
+      <a href="#" class="coll">
+        <img src="https://picsum.photos/seed/devlaptops/900/600" alt=""/>
+        <div class="overlay"></div>
+        <div class="inner">
+          <div class="count">14 picks · updated Apr 2026</div>
+          <h3>Best laptops for developers</h3>
+        </div>
+      </a>
+      <a href="#" class="coll">
+        <img src="https://picsum.photos/seed/dailyphones/900/600" alt=""/>
+        <div class="overlay"></div>
+        <div class="inner">
+          <div class="count">9 picks</div>
+          <h3>Best phones for daily drivers</h3>
+        </div>
+      </a>
+      <a href="#" class="coll">
+        <img src="https://picsum.photos/seed/familyevs/900/600" alt=""/>
+        <div class="overlay"></div>
+        <div class="inner">
+          <div class="count">12 picks</div>
+          <h3>Family EVs that actually fit kids</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Compare teaser -->
+<section>
+  <div class="container">
+    <div class="compare-teaser">
+      <div>
+        <h2>Side-by-side comparison, without the spreadsheet.</h2>
+        <p>Pick up to 3 products in the same category. We surface only the specs that differ — colour-coded so you can decide in 30 seconds.</p>
+        <a href="compare.html" class="btn primary">Open the comparator →</a>
+      </div>
+      <div class="compare-visual" aria-hidden="true">
+        <div class="col">
+          <div class="ph"></div>
+          <strong>iPhone 17 Pro</strong>
+          <div>A19 Pro</div>
+          <div class="good">48MP ƒ/1.7</div>
+          <div>6.3″ LTPO</div>
+          <div class="bad">3,650 mAh</div>
+        </div>
+        <div class="col">
+          <div class="ph"></div>
+          <strong>Pixel 10 Pro</strong>
+          <div>Tensor G5</div>
+          <div>50MP ƒ/1.6</div>
+          <div>6.4″ LTPO</div>
+          <div class="good">4,700 mAh</div>
+        </div>
+        <div class="col">
+          <div class="ph"></div>
+          <strong>S26 Ultra</strong>
+          <div class="good">SD 8 Gen 5</div>
+          <div class="good">200MP ƒ/1.7</div>
+          <div class="good">6.9″ AMOLED</div>
+          <div>5,000 mAh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compare dock -->
+<div class="compare-dock" role="region" aria-label="Comparison tray">
+  <div class="slots"></div>
+  <span class="count-label">0 items selected</span>
+  <a href="compare.html" class="btn primary sm dock-cta disabled">Compare →</a>
+</div>
+
+<!-- Footer -->
+<footer class="site">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="logo.png" alt="Revio" class="brand-logo" />
+        </a>
+        <p style="color:var(--text-muted); font-size: 13px; margin-top:12px; max-width: 320px;">
+          Revio tests products with laboratory-grade tools and publishes the raw data. No sponsored verdicts.
+        </p>
+        <div class="newsletter">
+          <input placeholder="you@domain.com" />
+          <button>Subscribe</button>
+        </div>
+        <div class="f-tag">One short digest every Friday. No spam.</div>
+      </div>
+      <div>
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="category.html">Phones</a></li>
+          <li><a href="category.html">Laptops</a></li>
+          <li><a href="category.html">Cars</a></li>
+          <li><a href="category.html">Gadgets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="#">Benchmark explorer</a></li>
+          <li><a href="#">Glossary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">How we test</a></li>
+          <li><a href="#">Editorial policy</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Revio Media. All rights reserved.</span>
+      <span>Made with care in three timezones.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Compare — Revio</title>
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Announcement strip -->
+<div class="announce">
+  <div class="container inner">
+    <div class="left">
+      <span class="pill">NEW</span>
+      <span>Compare up to 3 products side-by-side — now with AI verdicts.</span>
+    </div>
+    <div class="right">
+      <a href="#">Changelog</a>
+      <a href="#">For press</a>
+    </div>
+  </div>
+</div>
+
+<!-- Primary Nav -->
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="primary">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Revio" class="brand-logo" />
+      </a>
+      <div class="nav-links">
+        <a class="nav-trigger" href="category.html">Phones</a>
+        <a class="nav-trigger" href="category.html">Laptops</a>
+        <a class="nav-trigger" href="category.html">Cars</a>
+        <a class="nav-trigger" href="category.html">Gadgets</a>
+        <a class="nav-trigger" href="#">Deals</a>
+        <a class="nav-trigger" href="compare.html">Compare</a>
+      </div>
+      <div class="nav-actions">
+        <button class="search-trigger" aria-label="Open search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="label">Search products, brands, reviews…</span>
+          <span class="kbd">⌘K</span>
+        </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a href="#" class="btn ghost">Sign in</a>
+        <a href="#" class="btn primary">Get app</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <span style="color:var(--text)">Compare</span>
+  </nav>
+
+  <section class="cmp-hero">
+    <h1>Head-to-head comparison</h1>
+    <p id="cmp-sub">Pick up to 3 products. We highlight the winner for every spec — green for best, red for worst.</p>
+  </section>
+
+  <!-- AI summary cards -->
+  <div class="cmp-summary" id="cmp-summary" style="display: none;">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- Comparison table / empty state -->
+  <div id="cmp-root"></div>
+
+</div>
+
+<!-- Compare dock (kept for consistency; will allow adding more if < 3) -->
+<div class="compare-dock" role="region" aria-label="Comparison tray">
+  <div class="slots"></div>
+  <span class="count-label">0 items selected</span>
+  <a href="compare.html" class="btn primary sm dock-cta">Compare →</a>
+</div>
+
+<!-- Footer -->
+<footer class="site">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="logo.png" alt="Revio" class="brand-logo" />
+        </a>
+        <p style="color:var(--text-muted); font-size: 13px; margin-top:12px; max-width: 320px;">
+          Revio tests products with laboratory-grade tools and publishes the raw data. No sponsored verdicts.
+        </p>
+        <div class="newsletter">
+          <input placeholder="you@domain.com" />
+          <button>Subscribe</button>
+        </div>
+        <div class="f-tag">One short digest every Friday. No spam.</div>
+      </div>
+      <div>
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="category.html">Phones</a></li>
+          <li><a href="category.html">Laptops</a></li>
+          <li><a href="category.html">Cars</a></li>
+          <li><a href="category.html">Gadgets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="#">Deals tracker</a></li>
+          <li><a href="#">Benchmark explorer</a></li>
+          <li><a href="#">Glossary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">How we test</a></li>
+          <li><a href="#">Editorial policy</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Affiliate disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Revio Media. All rights reserved.</span>
+      <span>Made with care in three timezones.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  // Compare page specifics — group spec rows, compute best/worst highlights.
+
+  const SPEC_GROUPS = {
+    phones: [
+      { title: 'Performance', fields: ['Chipset', 'RAM', 'Storage'] },
+      { title: 'Display', fields: ['Display', 'Resolution', 'Peak brightness'] },
+      { title: 'Camera', fields: ['Main camera', 'Ultrawide', 'Telephoto', 'Front camera'] },
+      { title: 'Battery & charging', fields: ['Battery', 'Charging'] },
+      { title: 'Design & connectivity', fields: ['Weight', 'IP rating', 'Connectivity', 'OS'] }
+    ],
+    laptops: [
+      { title: 'Performance', fields: ['Chipset', 'RAM', 'Storage'] },
+      { title: 'Display', fields: ['Display', 'Resolution'] },
+      { title: 'Battery & body', fields: ['Battery', 'Weight'] },
+      { title: 'Connectivity', fields: ['Connectivity', 'Ports', 'OS'] }
+    ],
+    cars: [
+      { title: 'Powertrain', fields: ['Powertrain', 'Output', 'Torque', '0–60 mph'] },
+      { title: 'Range & charging', fields: ['Range (EPA)', 'Battery', 'Charging'] },
+      { title: 'Interior', fields: ['Seats', 'Cargo', 'Screen'] }
+    ]
+  };
+
+  // Which specs are "higher is better" / "lower is better" for ranking
+  const NUMERIC_HINTS = {
+    'Battery': { parse: v => parseFloat(String(v).replace(/,/g, '')), better: 'higher' },
+    'RAM': { parse: v => parseFloat(v), better: 'higher' },
+    'Peak brightness': { parse: v => parseFloat(String(v).replace(/,/g, '')), better: 'higher' },
+    'Weight': { parse: v => parseFloat(v), better: 'lower' },
+    '0–60 mph': { parse: v => parseFloat(v), better: 'lower' },
+    'Range (EPA)': { parse: v => parseFloat(v), better: 'higher' },
+    'Output': { parse: v => parseFloat(v), better: 'higher' },
+    'Torque': { parse: v => parseFloat(v), better: 'higher' }
+  };
+
+  function rankCells(field, values) {
+    const hint = NUMERIC_HINTS[field];
+    if (!hint) return values.map(() => 'neutral');
+    const nums = values.map(v => (v == null ? NaN : hint.parse(v)));
+    const valid = nums.filter(n => !isNaN(n));
+    if (valid.length < 2) return values.map(() => 'neutral');
+    const best = hint.better === 'higher' ? Math.max(...valid) : Math.min(...valid);
+    const worst = hint.better === 'higher' ? Math.min(...valid) : Math.max(...valid);
+    return nums.map(n => {
+      if (isNaN(n)) return 'neutral';
+      if (n === best && best !== worst) return 'best';
+      if (n === worst && best !== worst) return 'worst';
+      return 'neutral';
+    });
+  }
+
+  function renderCompare() {
+    const ids = getCompare();
+    const root = document.getElementById('cmp-root');
+    const summary = document.getElementById('cmp-summary');
+    const sub = document.getElementById('cmp-sub');
+
+    // Empty state
+    if (ids.length === 0) {
+      summary.style.display = 'none';
+      root.innerHTML = `
+        <div class="cmp-empty">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5"/>
+            <path d="M15 5h5a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5"/>
+            <path d="M9 12h6M12 9v6"/>
+          </svg>
+          <h3>No products selected yet</h3>
+          <p>Browse any category and tap the <strong>+</strong> on a product card to add it here.</p>
+          <a href="category.html" class="btn primary" style="margin-top: 14px;">Browse phones →</a>
+        </div>`;
+      return;
+    }
+
+    const products = ids.map(id => PRODUCTS[id]).filter(Boolean);
+    const category = products[0]?.category || 'phones';
+    const groups = SPEC_GROUPS[category] || SPEC_GROUPS.phones;
+    const cols = products.length + (products.length < 3 ? 1 : 0); // +1 for add slot
+    const gridTpl = `180px repeat(${cols}, 1fr)`;
+
+    sub.textContent = `Comparing ${products.length} ${products[0]?.category || 'items'} — green cells mark the best spec, red marks the weakest.`;
+
+    // Header
+    let html = `<div class="cmp-table">
+      <div class="cmp-head" style="grid-template-columns: ${gridTpl};">
+        <div class="label-cell">Specification</div>`;
+
+    products.forEach(p => {
+      html += `
+        <div class="prod-cell">
+          <button class="remove" data-remove="${p.id}" aria-label="Remove">×</button>
+          <div class="ph"><img src="${p.image}" alt=""/></div>
+          <div class="brand">${p.brand}</div>
+          <h3>${p.name}</h3>
+          <div class="meta">
+            <span class="rating"><span class="star">★</span> ${p.rating}/5</span>
+          </div>
+          <div class="actions">
+            <a href="product.html" class="btn outline sm" style="flex:1; text-align:center;">Details</a>
+          </div>
+        </div>`;
+    });
+
+    if (products.length < 3) {
+      html += `
+        <div class="prod-cell" style="padding: 0;">
+          <div class="cmp-add" onclick="window.location.href='category.html'">
+            <div class="plus">+</div>
+            <div>Add a product</div>
+            <small style="color: var(--text-subtle);">Up to 3 items</small>
+          </div>
+        </div>`;
+    }
+
+    html += `</div>`;
+
+    // Spec rows grouped
+    groups.forEach(group => {
+      html += `<div class="cmp-group-head" style="grid-template-columns: ${gridTpl};">${group.title}</div>`;
+      group.fields.forEach(field => {
+        const values = products.map(p => p.specs[field] ?? '—');
+        const ranks = rankCells(field, values);
+        html += `<div class="cmp-row" style="grid-template-columns: ${gridTpl};">
+          <div class="cell label">${field}</div>`;
+        values.forEach((v, i) => {
+          html += `<div class="cell value ${ranks[i]}">${v}</div>`;
+        });
+        if (products.length < 3) html += `<div class="cell value"></div>`;
+        html += `</div>`;
+      });
+    });
+
+    html += `</div>`;
+    root.innerHTML = html;
+
+    // Summary "winners" cards (when 2+)
+    if (products.length >= 2) {
+      summary.style.display = 'grid';
+      const winners = computeWinners(products);
+      summary.innerHTML = winners.map(w => `
+        <div class="card">
+          <h5>${w.category}</h5>
+          <div class="win">${w.winner}<small>${w.reason}</small></div>
+        </div>`).join('');
+    } else {
+      summary.style.display = 'none';
+    }
+
+    // Wire up remove buttons
+    root.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        removeFromCompare(btn.dataset.remove);
+        renderCompare();
+      });
+    });
+  }
+
+  function computeWinners(products) {
+    const winners = [];
+    const scoreAvg = (p, keys) => {
+      const s = p.scores || {};
+      const arr = keys.map(k => s[k]).filter(v => v != null);
+      return arr.length ? arr.reduce((a,b) => a+b, 0) / arr.length : 0;
+    };
+    const best = (keys, label, reasonLabel) => {
+      let winner = products[0], max = scoreAvg(products[0], keys);
+      products.forEach(p => {
+        const s = scoreAvg(p, keys);
+        if (s > max) { max = s; winner = p; }
+      });
+      winners.push({ category: label, winner: winner.name, reason: `${reasonLabel} · score ${max.toFixed(1)}/10` });
+    };
+
+    best(['performance'], 'Best performance', 'Fastest sustained chip');
+    best(['camera'], 'Best camera', 'Highest image quality score');
+    best(['battery'], 'Best battery', 'Longest real-world endurance');
+    return winners.slice(0, 3);
+  }
+
+  // Initial render
+  renderCompare();
+
+  // Re-render when storage changes (from add/remove on other tabs)
+  window.addEventListener('storage', (e) => {
+    if (e.key === STORAGE_KEY) renderCompare();
+  });
+
+  // Override the default dock click-remove to also re-render this page
+  const origRemove = removeFromCompare;
+  window.removeFromCompare = function(id) {
+    origRemove(id);
+    renderCompare();
+  };
+</script>
+</body>
+</html>

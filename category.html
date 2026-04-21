@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smartphones — Revio</title>
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Primary Nav -->
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="primary">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Revio" class="brand-logo" />
+      </a>
+      <div class="nav-links">
+        <a class="nav-trigger" href="category.html">Phones</a>
+        <a class="nav-trigger" href="category.html">Laptops</a>
+        <a class="nav-trigger" href="category.html">Cars</a>
+        <a class="nav-trigger" href="category.html">Gadgets</a>
+        <a class="nav-trigger" href="compare.html">Compare</a>
+      </div>
+      <button class="search-trigger" aria-label="Open search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="label">Search products, brands, reviews…</span>
+        <span class="kbd">⌘K</span>
+      </button>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a href="#" class="btn ghost">Sign in</a>
+        <a href="#" class="btn primary">Get app</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="#">Phones</a>
+    <span class="sep">/</span>
+    <span style="color:var(--text)">Smartphones</span>
+  </nav>
+</div>
+
+<!-- Category hero -->
+<section class="cat-hero">
+  <div class="container">
+    <div class="row">
+      <div>
+        <h1>Smartphones</h1>
+        <p>2,418 phones tested and rated. Filter by brand, chipset, camera, or screen — and save your shortlist.</p>
+      </div>
+    </div>
+    <div class="tabs" role="tablist">
+      <a href="#" class="active">All</a>
+      <a href="#">Flagships</a>
+      <a href="#">Mid-range</a>
+      <a href="#">Essentials</a>
+      <a href="#">Foldables</a>
+      <a href="#">Feature phones</a>
+      <a href="#">Rugged</a>
+    </div>
+  </div>
+</section>
+
+<!-- Filter bar -->
+<div class="filter-bar">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%;">
+    <div class="chip-row">
+      <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">Active:</span>
+      <span class="chip-active">Apple <button aria-label="Remove">✕</button></span>
+      <span class="chip-active">5G <button aria-label="Remove">✕</button></span>
+      <span class="chip-active">IP68 <button aria-label="Remove">✕</button></span>
+      <a href="#" class="reset">Reset all</a>
+    </div>
+    <div class="sort">
+      <span style="color: var(--text-muted);">Sort:</span>
+      <select>
+        <option>Best rated</option>
+        <option>Newest</option>
+        <option>Most compared</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="container">
+  <div class="cat-body">
+
+    <aside class="filters">
+      <div class="filter-group">
+        <h6>Brand <small>24</small></h6>
+        <label><span class="left"><input type="checkbox" checked /> Apple</span><span class="count">94</span></label>
+        <label><span class="left"><input type="checkbox" /> Samsung</span><span class="count">126</span></label>
+        <label><span class="left"><input type="checkbox" /> Google</span><span class="count">38</span></label>
+        <label><span class="left"><input type="checkbox" /> OnePlus</span><span class="count">44</span></label>
+        <label><span class="left"><input type="checkbox" /> Xiaomi</span><span class="count">118</span></label>
+        <label><span class="left"><input type="checkbox" /> Nothing</span><span class="count">12</span></label>
+        <a href="#" style="font-size: 12px; color: var(--accent-ink); font-weight: 600;">Show 18 more</a>
+      </div>
+
+      <div class="filter-group">
+        <h6>Screen size</h6>
+        <div class="spec-pills">
+          <span class="spec-pill">&lt; 6.0″</span>
+          <span class="spec-pill active">6.0–6.5″</span>
+          <span class="spec-pill">6.5–7.0″</span>
+          <span class="spec-pill">&gt; 7.0″</span>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h6>RAM</h6>
+        <label><span class="left"><input type="checkbox" /> 4 GB</span><span class="count">212</span></label>
+        <label><span class="left"><input type="checkbox" /> 8 GB</span><span class="count">684</span></label>
+        <label><span class="left"><input type="checkbox" /> 12 GB</span><span class="count">392</span></label>
+        <label><span class="left"><input type="checkbox" /> 16 GB+</span><span class="count">58</span></label>
+      </div>
+
+      <div class="filter-group">
+        <h6>Connectivity</h6>
+        <label><span class="left"><input type="checkbox" checked /> 5G</span><span class="count">1,402</span></label>
+        <label><span class="left"><input type="checkbox" /> Wi-Fi 7</span><span class="count">206</span></label>
+        <label><span class="left"><input type="checkbox" /> eSIM</span><span class="count">514</span></label>
+        <label><span class="left"><input type="checkbox" /> NFC</span><span class="count">1,810</span></label>
+      </div>
+
+      <div class="filter-group">
+        <h6>IP rating</h6>
+        <div class="spec-pills">
+          <span class="spec-pill">None</span>
+          <span class="spec-pill">IP54</span>
+          <span class="spec-pill">IP67</span>
+          <span class="spec-pill active">IP68</span>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h6>Review score</h6>
+        <label><span class="left"><input type="checkbox" /> 4.5 &amp; up</span><span class="count">412</span></label>
+        <label><span class="left"><input type="checkbox" /> 4.0 &amp; up</span><span class="count">891</span></label>
+        <label><span class="left"><input type="checkbox" /> 3.5 &amp; up</span><span class="count">1,423</span></label>
+      </div>
+    </aside>
+
+    <!-- Results -->
+    <div>
+      <div class="results-bar">
+        <span>Showing 1–9 of <strong style="color: var(--text);">312</strong> matching phones</span>
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="active" aria-label="Grid view" title="Grid view">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button aria-label="List view" title="List view">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <span class="ribbon accent">Editor's choice</span>
+            <button class="add-compare" data-compare-id="iphone-17-pro" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone17pro/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 17 Pro</h4>
+          <div class="specs"><span>A19 Pro</span><span>6.3″ LTPO</span><span>48MP triple</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.8/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">214 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="iphone-17-pro-max" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone17promax/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 17 Pro Max</h4>
+          <div class="specs"><span>A19 Pro</span><span>6.9″ LTPO</span><span>5,100 mAh</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.7/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">188 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="s26-ultra" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/s26ultra/700/500" alt=""/>
+          </div>
+          <div class="brand">Samsung</div>
+          <h4>Galaxy S26 Ultra</h4>
+          <div class="specs"><span>SD 8 Gen 5</span><span>6.9″ AMOLED</span><span>200MP</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.7/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">182 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="pixel-10-pro" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/pixel10pro/700/500" alt=""/>
+          </div>
+          <div class="brand">Google</div>
+          <h4>Pixel 10 Pro</h4>
+          <div class="specs"><span>Tensor G5</span><span>6.4″ LTPO</span><span>50MP triple</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.6/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">134 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="iphone-16-pro" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone16pro/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 16 Pro</h4>
+          <div class="specs"><span>A18 Pro</span><span>6.3″ LTPO</span><span>48MP</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.7/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">402 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="iphone-16" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone16/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 16</h4>
+          <div class="specs"><span>A18</span><span>6.1″ OLED</span><span>48MP dual</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.5/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">521 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="iphone-16-plus" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone16plus/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 16 Plus</h4>
+          <div class="specs"><span>A18</span><span>6.7″ OLED</span><span>4,674 mAh</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.4/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">298 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <span class="ribbon">Essential</span>
+            <button class="add-compare" data-compare-id="iphone-16e" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone16e/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 16e</h4>
+          <div class="specs"><span>A18</span><span>6.1″ OLED</span><span>48MP single</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.3/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">176 reviews</span>
+          </footer>
+        </a>
+
+        <a href="product.html" class="p-card">
+          <div class="img-wrap">
+            <button class="add-compare" data-compare-id="iphone-15-pro" aria-label="Add to compare">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <img src="https://picsum.photos/seed/iphone15pro/700/500" alt=""/>
+          </div>
+          <div class="brand">Apple</div>
+          <h4>iPhone 15 Pro</h4>
+          <div class="specs"><span>A17 Pro</span><span>6.1″ LTPO</span><span>48MP</span></div>
+          <footer>
+            <span class="rating"><span class="star">★</span> 4.6/5</span>
+            <span style="font-size: 12px; color: var(--text-muted);">611 reviews</span>
+          </footer>
+        </a>
+      </div>
+
+      <div class="pagination">
+        <a href="#" aria-label="Previous">←</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">…</a>
+        <a href="#">26</a>
+        <a href="#" aria-label="Next">→</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Compare dock -->
+<div class="compare-dock" role="region" aria-label="Comparison tray">
+  <div class="slots"></div>
+  <span class="count-label">0 items selected</span>
+  <a href="compare.html" class="btn primary sm dock-cta disabled">Compare →</a>
+</div>
+
+<!-- Footer -->
+<footer class="site">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="logo.png" alt="Revio" class="brand-logo" />
+        </a>
+        <p style="color:var(--text-muted); font-size: 13px; margin-top:12px; max-width: 320px;">
+          Revio tests products with laboratory-grade tools and publishes the raw data. No sponsored verdicts.
+        </p>
+        <div class="newsletter">
+          <input placeholder="you@domain.com" />
+          <button>Subscribe</button>
+        </div>
+        <div class="f-tag">One short digest every Friday. No spam.</div>
+      </div>
+      <div>
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="category.html">Phones</a></li>
+          <li><a href="category.html">Laptops</a></li>
+          <li><a href="category.html">Cars</a></li>
+          <li><a href="category.html">Gadgets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <ul>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="#">Benchmark explorer</a></li>
+          <li><a href="#">Glossary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">How we test</a></li>
+          <li><a href="#">Editorial policy</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Revio Media. All rights reserved.</span>
+      <span>Made with care in three timezones.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
