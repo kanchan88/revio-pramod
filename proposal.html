@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Revio — Project Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 16mm 14mm 18mm; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+  }
+
+  :root {
+    --text: #0b0b0f;
+    --muted: #555561;
+    --subtle: #8a8a95;
+    --border: #e5e5e8;
+    --accent: #3b2df0;
+    --accent-soft: #eeebff;
+    --success: #0f9d58;
+    --success-soft: #e8f6ef;
+    --danger-soft: #fef2f2;
+    --bg: #ffffff;
+    --bg-soft: #fafafb;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', Inter, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    margin: 0; padding: 0;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.005em;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 20px 24px 30px; }
+
+  header.doc {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  header.doc .brand img { height: 34px; width: auto; display: block; }
+  header.doc .meta { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.45; }
+  header.doc .meta strong { color: var(--text); font-size: 10pt; }
+
+  h1 {
+    font-size: 26pt; margin: 8px 0 4px;
+    letter-spacing: -.03em; line-height: 1.05; font-weight: 700;
+  }
+  .tagline { color: var(--muted); font-size: 11pt; margin-bottom: 18px; }
+
+  .parties {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    background: var(--bg-soft); border-radius: 10px;
+    padding: 14px 16px; margin: 0 0 26px; font-size: 9.5pt;
+  }
+  .parties label { color: var(--subtle); font-size: 8.5pt; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; display: block; margin-bottom: 2px; }
+  .parties .field { color: var(--text); font-weight: 600; }
+
+  h2 {
+    font-size: 13.5pt; margin: 24px 0 12px;
+    letter-spacing: -.015em; font-weight: 700;
+    padding-bottom: 8px; border-bottom: 2px solid var(--text);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num {
+    font-size: 9pt; color: var(--subtle); font-weight: 600; letter-spacing: .06em;
+  }
+  h3 { font-size: 11pt; margin: 16px 0 6px; font-weight: 700; color: var(--text); }
+
+  p { margin: 0 0 10px; }
+  ul { margin: 6px 0 12px; padding-left: 18px; }
+  li { margin-bottom: 4px; }
+
+  .exec {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 10.5pt;
+    margin: 6px 0 20px;
+  }
+
+  .phase {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .phase-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 14px; margin-bottom: 10px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .phase-head .name { font-size: 13pt; font-weight: 700; letter-spacing: -.015em; }
+  .phase-head .name small { display: block; font-size: 9pt; font-weight: 500; color: var(--muted); margin-top: 2px; letter-spacing: 0; }
+  .phase-head .price {
+    font-size: 14pt; font-weight: 700; color: var(--accent);
+    white-space: nowrap;
+  }
+  .phase ul { margin-top: 4px; }
+
+  table.pricing {
+    width: 100%; border-collapse: collapse;
+    margin: 6px 0 20px;
+    font-size: 10.5pt;
+    overflow: hidden; border-radius: 10px;
+  }
+  table.pricing th,
+  table.pricing td {
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  table.pricing th {
+    background: var(--bg-soft);
+    text-align: left; font-size: 9pt; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted); font-weight: 600;
+  }
+  table.pricing td.amt { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 500; }
+  table.pricing tr.subtotal td { background: var(--bg-soft); font-weight: 600; }
+  table.pricing tr.discount td { color: var(--success); font-weight: 600; }
+  table.pricing tr.total td {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700; font-size: 12pt;
+    border-bottom: 0;
+  }
+
+  .callout-included,
+  .callout-excluded {
+    padding: 14px 18px; border-radius: 10px;
+    margin: 8px 0 18px;
+    font-size: 10pt;
+  }
+  .callout-included {
+    background: var(--success-soft);
+    border-left: 3px solid var(--success);
+  }
+  .callout-excluded {
+    background: var(--danger-soft);
+    border-left: 3px solid #dc2626;
+  }
+  .callout-included strong,
+  .callout-excluded strong {
+    display: block; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 6px;
+  }
+  .callout-included strong { color: var(--success); }
+  .callout-excluded strong { color: #dc2626; }
+  .callout-included ul,
+  .callout-excluded ul { margin: 0; padding-left: 18px; }
+  .callout-included li,
+  .callout-excluded li { margin-bottom: 3px; }
+
+  .milestones {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin: 10px 0 16px;
+  }
+  .milestone {
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 14px; text-align: center;
+  }
+  .milestone .pct { font-size: 18pt; font-weight: 700; color: var(--accent); letter-spacing: -.02em; }
+  .milestone .when { font-size: 9pt; color: var(--muted); margin-top: 2px; }
+
+  .sign {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    margin-top: 30px; page-break-inside: avoid;
+  }
+  .sign .box {
+    border-top: 1.5px solid var(--text);
+    padding-top: 8px;
+    font-size: 9pt; color: var(--muted);
+  }
+  .sign .box strong { display: block; color: var(--text); font-size: 10pt; margin-bottom: 18px; }
+  .sign .box .label { display: block; margin-top: 20px; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .08em; color: var(--subtle); }
+
+  footer.doc {
+    margin-top: 34px; padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 8.5pt; color: var(--subtle);
+    text-align: center;
+  }
+
+  .quiet { color: var(--muted); font-size: 9.5pt; }
+  .accent-tag {
+    display: inline-block; font-size: 8.5pt; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 3px 9px; border-radius: 999px;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="doc">
+    <div class="brand">
+      <img src="logo.png" alt="Revio" />
+    </div>
+    <div class="meta">
+      <strong>Project Proposal</strong><br>
+      21 April 2026<br>
+      <span style="color:var(--subtle)">Valid for 30 days</span>
+    </div>
+  </header>
+
+  <div class="accent-tag">Proposal · v1.0</div>
+  <h1>Revio — Review Platform</h1>
+  <div class="tagline">A minimalist SaaS-style review platform for phones, laptops, cars and gadgets.</div>
+
+  <div class="parties">
+    <div>
+      <label>Prepared for</label>
+      <div class="field">_________________________</div>
+    </div>
+    <div>
+      <label>Prepared by</label>
+      <div class="field">_________________________</div>
+    </div>
+  </div>
+
+  <h2><span class="num">01</span> Executive Summary</h2>
+  <div class="exec">
+    Revio is a modern digital product review platform — similar in data depth to GSMArena but wrapped in a clean, minimalist SaaS-style interface (think Stripe, Vercel, Linear). It covers <strong>Phones, Laptops, Cars and Gadgets</strong> with hierarchical categories, spec-deep product pages, a side-by-side comparison engine, and editorial + community review layers.
+    <br><br>
+    This proposal breaks the build into <strong>three phases</strong> so the platform can launch fast with core value (Phase 1) and expand into community features as traction grows (Phase 2 &amp; 3). Each phase can be commissioned independently.
+  </div>
+
+  <h2><span class="num">02</span> Scope &amp; Phased Delivery</h2>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div class="name">
+        Phase 1 — Platform Foundation &amp; Listing
+        <small>Public-facing platform with admin-only content management</small>
+      </div>
+      <div class="price">Rs. 80,000</div>
+    </div>
+    <ul>
+      <li>Complete design system — typography, colour, spacing, Light &amp; Dark modes</li>
+      <li>Homepage with premium mega menu (image-led, Stripe / Linear style)</li>
+      <li>Category landing pages with filters, sort, chip-row, grid/list views, pagination</li>
+      <li>Product detail pages — gallery, verdict scorecard, sub-scores, pros/cons, tabbed content, grouped spec tables</li>
+      <li>Comparison engine — up to 3 items side-by-side with difference highlighting</li>
+      <li>Global search with autocomplete</li>
+      <li>Fully responsive (mobile, tablet, desktop)</li>
+      <li>Admin-only interface for adding &amp; editing products</li>
+      <li>Deployment to your hosting environment, source code &amp; admin handover</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div class="name">
+        Phase 2 — Contributor Submissions
+        <small>Let external contributors submit products, subject to moderation</small>
+      </div>
+      <div class="price">+ Rs. 1,00,000</div>
+    </div>
+    <ul>
+      <li>User registration &amp; authentication (email + social login)</li>
+      <li>Contributor dashboards</li>
+      <li>Category-aware product submission form with validation</li>
+      <li>Moderation queue — admins approve or reject before going live</li>
+      <li>Versioning / edit history on product entries</li>
+      <li>Contributor public profile pages</li>
+      <li>Email notifications (submission received, approved, rejected, edited)</li>
+      <li>Role-based permissions (admin, editor, contributor, viewer)</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div class="name">
+        Phase 3 — Public Reviews &amp; Q&amp;A
+        <small>The community layer — ratings, reviews, threaded Q&amp;A</small>
+      </div>
+      <div class="price">+ Rs. 1,20,000</div>
+    </div>
+    <ul>
+      <li>Star ratings + written reviews with pros/cons tagging</li>
+      <li>Review moderation tools (reporting, flagging, admin actions)</li>
+      <li>Verified-buyer / verified-owner badge system</li>
+      <li>Helpfulness voting on reviews</li>
+      <li>Per-product threaded Q&amp;A</li>
+      <li>Spam &amp; abuse prevention (rate limits, keyword filters, captcha)</li>
+      <li>Email notifications for review responses &amp; Q&amp;A answers</li>
+      <li>Aggregated user scorecard on each product page</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">03</span> Investment Summary</h2>
+  <table class="pricing">
+    <thead>
+      <tr>
+        <th style="width: 75%;">Item</th>
+        <th class="amt" style="width: 25%;">Amount (Rs.)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Phase 1 — Platform foundation &amp; listing</td>
+        <td class="amt">80,000</td>
+      </tr>
+      <tr>
+        <td>Phase 2 — Contributor submissions</td>
+        <td class="amt">1,00,000</td>
+      </tr>
+      <tr>
+        <td>Phase 3 — Public reviews &amp; Q&amp;A</td>
+        <td class="amt">1,20,000</td>
+      </tr>
+      <tr class="subtotal">
+        <td>Subtotal</td>
+        <td class="amt">3,00,000</td>
+      </tr>
+      <tr class="discount">
+        <td>Referral discount</td>
+        <td class="amt">− 20,000</td>
+      </tr>
+      <tr class="total">
+        <td>Net investment (all phases)</td>
+        <td class="amt">Rs. 2,80,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="quiet">All amounts are in Indian Rupees (INR), exclusive of applicable taxes (GST). Each phase can be commissioned independently — you are not committed to Phase 2 or 3 at Phase 1 sign-off.</div>
+
+  <div class="page-break"></div>
+
+  <h2><span class="num">04</span> What's Included</h2>
+  <div class="callout-included">
+    <strong>Included in every phase</strong>
+    <ul>
+      <li>UI/UX design for every screen in scope</li>
+      <li>Full-stack development &amp; testing</li>
+      <li>Deployment assistance to your chosen host</li>
+      <li>Admin handover session per phase</li>
+      <li>30-day post-launch bug-fix warranty</li>
+      <li>Complete source code &amp; documentation</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">05</span> What's Not Included</h2>
+  <div class="callout-excluded">
+    <strong>Explicitly excluded — billed separately or handled by the client</strong>
+    <ul>
+      <li><strong>Hosting costs</strong> — servers, CDN, email/SMS sending, object storage, backups</li>
+      <li><strong>Domain costs</strong> — registration, SSL certificates, renewals</li>
+      <li><strong>Data entry</strong> — populating the product catalogue is a separate effort (quoted on request)</li>
+      <li>Editorial content writing — expert reviews, collection articles</li>
+      <li>Third-party API / SaaS fees — search (Algolia / Meilisearch), analytics, error monitoring, auth providers, email providers</li>
+      <li>Ongoing maintenance, feature additions or support beyond the 30-day warranty window</li>
+      <li>Mobile native apps (iOS / Android) — the platform is fully responsive and works in every modern browser</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">06</span> Payment Milestones (per phase)</h2>
+  <div class="milestones">
+    <div class="milestone">
+      <div class="pct">40%</div>
+      <div class="when">Phase kickoff</div>
+    </div>
+    <div class="milestone">
+      <div class="pct">30%</div>
+      <div class="when">Design &amp; key-page sign-off</div>
+    </div>
+    <div class="milestone">
+      <div class="pct">30%</div>
+      <div class="when">Launch / final handover</div>
+    </div>
+  </div>
+  <div class="quiet">Invoices are payable within 7 days of issue. The referral discount is applied to the final invoice of Phase 1.</div>
+
+  <h2><span class="num">07</span> Acceptance</h2>
+  <p>To proceed, please sign and return this proposal. On receipt, we'll schedule a kickoff and lock a delivery timeline for Phase 1.</p>
+
+  <div class="sign">
+    <div class="box">
+      <strong>For the Client</strong>
+      <span class="label">Name</span>
+      <span class="label">Signature &amp; Date</span>
+    </div>
+    <div class="box">
+      <strong>For the Vendor</strong>
+      <span class="label">Name</span>
+      <span class="label">Signature &amp; Date</span>
+    </div>
+  </div>
+
+  <footer class="doc">
+    Revio · Project Proposal · 21 April 2026 · Valid for 30 days · Prices assume the scope defined in this document; any change in scope will be re-quoted before work begins.
+  </footer>
+
+</div>
+</body>
+</html>

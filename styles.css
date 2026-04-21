@@ -440,6 +440,66 @@ section { padding: 56px 0; }
 .coll .count { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
 .coll h3 { margin: 4px 0 0; font-size: 18px; font-weight: 600; }
 
+/* ---------- Promotional strip (top of page) ---------- */
+.promo-strip {
+  background: linear-gradient(90deg, #0b0b0f 0%, #2a1f7a 50%, #6a5cff 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.promo-strip::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(600px 60px at 20% 50%, rgba(255,138,194,.35), transparent 70%);
+  pointer-events: none;
+}
+.promo-strip a {
+  position: relative;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 11px 20px;
+  font-size: 13.5px; font-weight: 500;
+  color: #fff; text-decoration: none;
+  transition: background .2s;
+}
+.promo-strip a:hover { background: rgba(255,255,255,.04); }
+.promo-strip .live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #ff8ac2;
+  box-shadow: 0 0 0 3px rgba(255,138,194,.35);
+  animation: promo-pulse 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes promo-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255,138,194,.35); opacity: 1; }
+  50% { box-shadow: 0 0 0 6px rgba(255,138,194,.15); opacity: .75; }
+}
+.promo-strip .tag {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  background: rgba(255,255,255,.14);
+  padding: 3px 9px; border-radius: 999px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.promo-strip .msg {
+  color: rgba(255,255,255,.9);
+}
+.promo-strip .msg strong { color: #fff; font-weight: 600; }
+.promo-strip .cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 700; color: #fff;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255,255,255,.22);
+  white-space: nowrap;
+}
+.promo-strip .cta svg { transition: transform .2s ease; }
+.promo-strip a:hover .cta svg { transform: translateX(4px); }
+
+@media (max-width: 760px) {
+  .promo-strip a { gap: 10px; padding: 10px 16px; font-size: 12.5px; flex-wrap: wrap; }
+  .promo-strip .msg { display: none; }
+  .promo-strip .tag { font-size: 10px; padding: 2px 8px; }
+  .promo-strip .cta { padding-left: 10px; font-size: 12.5px; }
+}
+
 /* ---------- Promotional banner ---------- */
 .promo-banner {
   position: relative; display: block;
@@ -878,7 +938,9 @@ footer.site {
 .tabs-nav {
   display: flex; gap: 2px; border-bottom: 1px solid var(--border);
   margin-bottom: 28px; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
 }
+.tabs-nav::-webkit-scrollbar { display: none; }
 .tabs-nav a {
   padding: 14px 16px; font-size: 14px; font-weight: 500; color: var(--text-muted);
   border-bottom: 2px solid transparent; margin-bottom: -1px;
@@ -1228,4 +1290,33 @@ footer.site {
   .results-bar { flex-direction: column; align-items: start; gap: 8px; }
 
   .breadcrumb { flex-wrap: wrap; font-size: 12px; }
+}
+
+/* ---------- Mobile: product page tabs become true switchable tabs ---------- */
+@media (max-width: 760px) {
+  .tabs-nav {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    background: var(--bg);
+    margin: 0 -16px 20px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .tabs-nav a {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  /* On mobile, only the active tab's panel is visible; "overview" shows all panels. */
+  body[data-tab]:not([data-tab="overview"]) .tab-panel {
+    display: none;
+  }
+  body[data-tab]:not([data-tab="overview"]) .tab-panel.active {
+    display: block;
+  }
+  /* Trim large top-margins when panels are toggled independently */
+  body[data-tab]:not([data-tab="overview"]) .tab-panel.active {
+    margin-top: 0 !important;
+  }
 }

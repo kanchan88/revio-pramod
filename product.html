@@ -12,6 +12,19 @@
 </head>
 <body>
 
+<!-- Promotional strip -->
+<div class="promo-strip">
+  <a href="product.html">
+    <span class="live-dot"></span>
+    <span class="tag">Just in</span>
+    <span class="msg"><strong>iPhone 17 Pro</strong> — 28-day deep dive, tested head-to-head against the Pixel 10 Pro &amp; S26 Ultra.</span>
+    <span class="cta">
+      See our latest review
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </span>
+  </a>
+</div>
+
 <!-- Primary Nav -->
 <div class="nav-wrap">
   <div class="container">
@@ -163,7 +176,7 @@
 
     <div>
       <!-- Expert review -->
-      <article id="review" class="review-body">
+      <article id="review" class="review-body tab-panel">
         <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 6px;">The 17 Pro is the most quietly confident iPhone in years.</h2>
         <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Apple hasn't reinvented the wheel. It's just made the wheel smoother, faster, and better at photographing itself in the rain.</p>
 
@@ -192,7 +205,7 @@
       </article>
 
       <!-- Specs -->
-      <section id="specs" style="margin-top: 48px;">
+      <section id="specs" class="tab-panel" style="margin-top: 48px;">
         <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 18px;">Full specifications</h2>
 
         <div class="spec-block">
@@ -262,7 +275,7 @@
       </section>
 
       <!-- User reviews -->
-      <section id="users" style="margin-top: 48px;">
+      <section id="users" class="tab-panel" style="margin-top: 48px;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
           <h2 style="font-size: 22px; font-weight: 700; margin: 0;">User reviews <small style="color:var(--text-subtle); font-weight: 500;">· 214</small></h2>
           <a href="#" class="btn outline sm">Write a review</a>
@@ -323,7 +336,7 @@
       </section>
 
       <!-- Q&A -->
-      <section id="qa" style="margin-top: 48px;">
+      <section id="qa" class="tab-panel" style="margin-top: 48px;">
         <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 18px;">Community Q&amp;A</h2>
         <div class="user-review">
           <div class="head">
@@ -345,7 +358,7 @@
       </section>
 
       <!-- Similar -->
-      <section id="similar" style="margin-top: 48px;">
+      <section id="similar" class="tab-panel" style="margin-top: 48px;">
         <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 18px;">People also compared</h2>
         <div class="card-grid">
           <a href="product.html" class="p-card">
@@ -508,6 +521,53 @@
       if (main && img) main.src = img.src.replace('/200/200', '/1200/900');
     });
   });
+
+  // Mobile: make the tabs-nav switch panels instead of scrolling to anchors.
+  const MOBILE_BREAK = 760;
+  const tabsNav = document.querySelector('.tabs-nav');
+
+  function setActiveTab(targetId, { scroll = true } = {}) {
+    if (!tabsNav) return;
+    tabsNav.querySelectorAll('a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + targetId);
+    });
+    document.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.toggle('active', p.id === targetId);
+    });
+    document.body.dataset.tab = targetId;
+    if (scroll && window.innerWidth <= MOBILE_BREAK) {
+      // Keep the tabs-nav in view after a tab switch.
+      requestAnimationFrame(() => {
+        tabsNav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }
+
+  if (tabsNav) {
+    tabsNav.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      if (window.innerWidth > MOBILE_BREAK) return; // desktop: native anchor scroll
+      e.preventDefault();
+      const id = link.getAttribute('href').slice(1);
+      setActiveTab(id);
+    });
+
+    // Default mobile view
+    const applyInitial = () => {
+      if (window.innerWidth <= MOBILE_BREAK) {
+        if (!document.body.dataset.tab) document.body.dataset.tab = 'overview';
+      } else {
+        // Clear any mobile state so desktop shows everything
+        delete document.body.dataset.tab;
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        tabsNav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+        tabsNav.querySelector('a[href="#overview"]')?.classList.add('active');
+      }
+    };
+    applyInitial();
+    window.addEventListener('resize', applyInitial);
+  }
 </script>
 </body>
 </html>
