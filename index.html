@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Revio — Minimalist reviews for the things you buy</title>
+<title>Infer Nepal — Discover &amp; review B2B software for Nepali businesses</title>
+<meta name="description" content="The independent software discovery platform for Nepal. Compare ERP, accounting, school, hotel, hospital and HR software with verified user reviews and transparent pricing." />
 <link rel="icon" href="logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,10 +17,10 @@
 <div class="promo-strip">
   <a href="product.html">
     <span class="live-dot"></span>
-    <span class="tag">Just in</span>
-    <span class="msg"><strong>iPhone 17 Pro</strong> — 28-day deep dive, tested head-to-head against the Pixel 10 Pro &amp; S26 Ultra.</span>
+    <span class="tag">New</span>
+    <span class="msg"><strong>Top 10 ERP for Nepali SMBs — 2026 report</strong> · benchmarked across features, deployment, support &amp; total cost of ownership.</span>
     <span class="cta">
-      See our latest review
+      Read the report
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </span>
   </a>
@@ -30,332 +31,190 @@
   <div class="container">
     <nav class="primary">
       <a href="index.html" class="brand">
-        <img src="logo.png" alt="Revio" class="brand-logo" />
+        <img src="logo.png" alt="Infer Nepal" class="brand-logo" />
       </a>
 
-      <div class="nav-links">
-        <!-- Mega menu: Phones -->
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav-links">
+        <svg class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="nav-links" id="primary-nav-links">
+        <!-- Industries mega menu -->
         <div class="nav-item">
           <button class="nav-trigger" aria-haspopup="true">
-            Phones
+            Industries
             <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="mega wide" role="menu">
             <div class="mega-body">
               <div class="mega-left">
                 <div class="mega-col">
-                  <h4>Browse</h4>
+                  <h4>By industry</h4>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v6a6 6 0 0012 0v-6"/></svg></span>
                     <span class="body">
-                      <span class="title">Flagship smartphones</span>
-                      <span class="desc">Top-tier cameras, chipsets and displays.</span>
+                      <span class="title">School &amp; College</span>
+                      <span class="desc">School ERP, attendance, exam, library, fees.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 16v6"/><rect x="3" y="8" width="18" height="8" rx="2"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V9l6 3V9l6 3V9l6 3v9z"/></svg></span>
                     <span class="body">
-                      <span class="title">Mid-range <span class="badge-hot">HOT</span></span>
-                      <span class="desc">Best value picks this year.</span>
+                      <span class="title">Manufacturing <span class="badge-hot">HOT</span></span>
+                      <span class="desc">Sales, purchase, BOM, production, inventory.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="10" width="18" height="11"/><path d="M3 10l9-7 9 7"/></svg></span>
                     <span class="body">
-                      <span class="title">Essentials</span>
-                      <span class="desc">Dependable daily drivers.</span>
+                      <span class="title">Hotels &amp; Hospitality</span>
+                      <span class="desc">PMS, F&amp;B, housekeeping, banquet, payroll.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="M12 5v14"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/></svg></span>
                     <span class="body">
-                      <span class="title">Foldables <span class="badge-new">NEW</span></span>
-                      <span class="desc">Books, flips and dual-screen designs.</span>
+                      <span class="title">Trading &amp; Distribution</span>
+                      <span class="desc">Multi-godown, route, distributor, PoS.</span>
                     </span>
                   </a>
                 </div>
                 <div class="mega-col">
-                  <h4>By brand</h4>
+                  <h4>More industries</h4>
                   <ul class="mini-list">
-                    <li><a href="#">Apple <small>94 models</small></a></li>
-                    <li><a href="#">Samsung <small>126 models</small></a></li>
-                    <li><a href="#">Google Pixel <small>38 models</small></a></li>
-                    <li><a href="#">OnePlus <small>44 models</small></a></li>
-                    <li><a href="#">Xiaomi <small>118 models</small></a></li>
-                    <li><a href="#">Nothing <small>12 models</small></a></li>
-                    <li><a href="#">Motorola <small>52 models</small></a></li>
+                    <li><a href="category.html">Online Stores <small>34 tools</small></a></li>
+                    <li><a href="category.html">NGO &amp; Non-profit <small>22 tools</small></a></li>
+                    <li><a href="category.html">Travel &amp; Trekking <small>18 tools</small></a></li>
+                    <li><a href="category.html">Hydro Power <small>12 tools</small></a></li>
+                    <li><a href="category.html">Hospital &amp; Pharma <small>26 tools</small></a></li>
+                    <li><a href="category.html">Banking &amp; Co-op <small>14 tools</small></a></li>
+                    <li><a href="category.html">Construction <small>9 tools</small></a></li>
                   </ul>
                 </div>
               </div>
               <div class="mega-right">
-                <a href="product.html" class="feature-card">
-                  <img src="https://picsum.photos/seed/phonefeat/900/500" alt="">
-                  <div class="overlay"></div>
-                  <div class="meta">
-                    <span class="tag">Editor's choice</span>
-                    <h5>iPhone 17 Pro review</h5>
-                    <p>The most polished camera system of the year.</p>
+                <a href="product.html" class="feature-card" style="aspect-ratio:16/10; background: var(--accent-soft); display:flex; align-items:end; padding:18px;">
+                  <div style="position:relative; z-index:2;">
+                    <span class="tag" style="background: var(--accent); color:#fff; padding:3px 8px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:.06em;">EDITOR'S PICK</span>
+                    <h5 style="margin:8px 0 4px; color:var(--ink); font-size:16px; font-weight:700;">Tally Prime — fastest VAT close in the market</h5>
+                    <p style="margin:0; color:var(--text-muted); font-size:12px;">2,000+ verified deployments across Nepal.</p>
+                  </div>
+                  <div style="position:absolute; top:-10px; right:-10px; opacity:.6;">
+                    <svg width="160" height="120" viewBox="0 0 200 150" fill="none">
+                      <rect x="20" y="20" width="160" height="110" rx="10" fill="#fff" stroke="#0A7AA9" stroke-width="2"/>
+                      <rect x="34" y="38" width="50" height="14" rx="3" fill="#0A7AA9" opacity=".25"/>
+                      <rect x="34" y="58" width="132" height="6" rx="3" fill="#0A7AA9" opacity=".3"/>
+                      <rect x="34" y="70" width="132" height="6" rx="3" fill="#0A7AA9" opacity=".18"/>
+                      <rect x="34" y="82" width="100" height="6" rx="3" fill="#0A7AA9" opacity=".18"/>
+                      <rect x="34" y="100" width="38" height="20" rx="4" fill="#0A7AA9"/>
+                    </svg>
                   </div>
                 </a>
                 <ul class="mini-list">
-                  <li><a href="#">Best phones of 2026 <small>List →</small></a></li>
-                  <li><a href="#">Phones with the best battery <small>List →</small></a></li>
+                  <li><a href="category.html">Best ERP for SMBs in Nepal <small>List →</small></a></li>
+                  <li><a href="category.html">Cheapest accounting software <small>List →</small></a></li>
                 </ul>
               </div>
             </div>
             <div class="mega-foot">
               <div class="links">
-                <a href="#">Rumors</a>
-                <a href="#">Buying guide</a>
+                <a href="#">Buyer's guides</a>
+                <a href="#">2026 software trends</a>
               </div>
-              <a href="category.html" class="viewall">Explore all phones
+              <a href="category.html" class="viewall">Browse all industries
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Mega menu: Laptops -->
+        <!-- Categories mega menu (functional / horizontal) -->
         <div class="nav-item">
           <button class="nav-trigger" aria-haspopup="true">
-            Laptops
+            Categories
             <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="mega wide" role="menu">
             <div class="mega-body">
               <div class="mega-left">
                 <div class="mega-col">
-                  <h4>By use case</h4>
+                  <h4>Most searched</h4>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
                     <span class="body">
-                      <span class="title">Ultrabooks</span>
-                      <span class="desc">Thin, light and long-lasting.</span>
+                      <span class="title">Accounting &amp; Finance</span>
+                      <span class="desc">Books, VAT/GST, banking, payables.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l3 6 6 .9-4.5 4.3L18 21l-6-3.3L6 21l1.5-6.8L3 9.9 9 9z"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg></span>
                     <span class="body">
-                      <span class="title">Gaming laptops <span class="badge-hot">HOT</span></span>
-                      <span class="desc">RTX 50-series and OLED panels.</span>
+                      <span class="title">ERP <span class="badge-hot">HOT</span></span>
+                      <span class="desc">End-to-end Sales · Purchase · Production.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/></svg></span>
                     <span class="body">
-                      <span class="title">Creator workstations</span>
-                      <span class="desc">Colour-accurate displays and beefy GPUs.</span>
+                      <span class="title">HRMS &amp; Payroll</span>
+                      <span class="desc">Attendance, leave, PF, payroll, appraisals.</span>
                     </span>
                   </a>
                   <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h16M4 16h16"/><path d="M8 4v16M16 4v16"/></svg></span>
+                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/></svg></span>
                     <span class="body">
-                      <span class="title">2-in-1 convertibles</span>
-                      <span class="desc">Touchscreens that fold all the way back.</span>
+                      <span class="title">Inventory &amp; Warehouse</span>
+                      <span class="desc">Multi-godown, batch, expiry, barcode.</span>
                     </span>
                   </a>
                 </div>
                 <div class="mega-col">
-                  <h4>By brand</h4>
+                  <h4>By function</h4>
                   <ul class="mini-list">
-                    <li><a href="#">Apple MacBook <small>24 models</small></a></li>
-                    <li><a href="#">Dell XPS <small>31 models</small></a></li>
-                    <li><a href="#">Lenovo ThinkPad <small>67 models</small></a></li>
-                    <li><a href="#">ASUS ROG / Zenbook <small>58 models</small></a></li>
-                    <li><a href="#">HP Spectre / Omen <small>44 models</small></a></li>
-                    <li><a href="#">Framework <small>6 models</small></a></li>
-                    <li><a href="#">Razer Blade <small>14 models</small></a></li>
+                    <li><a href="category.html">CRM &amp; Sales <small>56 tools</small></a></li>
+                    <li><a href="category.html">Point of Sale <small>34 tools</small></a></li>
+                    <li><a href="category.html">School ERP <small>28 tools</small></a></li>
+                    <li><a href="category.html">Hotel PMS <small>21 tools</small></a></li>
+                    <li><a href="category.html">Hospital HMS <small>18 tools</small></a></li>
+                    <li><a href="category.html">LMS &amp; e-Learning <small>22 tools</small></a></li>
+                    <li><a href="category.html">Document Management <small>16 tools</small></a></li>
                   </ul>
                 </div>
               </div>
               <div class="mega-right">
-                <a href="#" class="feature-card">
-                  <img src="https://picsum.photos/seed/laptopfeat/900/500" alt="">
-                  <div class="overlay"></div>
-                  <div class="meta">
-                    <span class="tag">Benchmark report</span>
-                    <h5>M4 Pro vs Ryzen AI 9</h5>
-                    <p>We ran 14 workloads — here's what won.</p>
+                <a href="category.html" class="feature-card" style="aspect-ratio:16/10; background:var(--ink-soft); display:flex; align-items:end; padding:18px;">
+                  <div style="position:relative; z-index:2;">
+                    <span class="tag" style="background: var(--ink); color:#fff; padding:3px 8px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:.06em;">2026 GUIDE</span>
+                    <h5 style="margin:8px 0 4px; color:var(--ink); font-size:16px; font-weight:700;">How to pick the right ERP in 5 questions</h5>
+                    <p style="margin:0; color:var(--text-muted); font-size:12px;">Free buyer's worksheet — used by 1,400 SMBs.</p>
                   </div>
                 </a>
                 <ul class="mini-list">
-                  <li><a href="#">Best laptops for developers <small>List →</small></a></li>
-                  <li><a href="#">Benchmark explorer <small>Tool →</small></a></li>
+                  <li><a href="#">All buyer's guides <small>List →</small></a></li>
+                  <li><a href="#">RFP template <small>Tool →</small></a></li>
                 </ul>
               </div>
             </div>
             <div class="mega-foot">
               <div class="links">
-                <a href="#">Student picks</a>
-                <a href="#">Battery leaders</a>
+                <a href="#">Free vs paid</a>
+                <a href="#">Cloud vs on-premise</a>
               </div>
-              <a href="category.html" class="viewall">Explore all laptops
+              <a href="category.html" class="viewall">Browse all categories
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Mega menu: Cars -->
-        <div class="nav-item">
-          <button class="nav-trigger" aria-haspopup="true">
-            Cars
-            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="mega wide" role="menu">
-            <div class="mega-body">
-              <div class="mega-left">
-                <div class="mega-col">
-                  <h4>By powertrain</h4>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7v8l9-12h-7z"/></svg></span>
-                    <span class="body">
-                      <span class="title">Electric (EV)</span>
-                      <span class="desc">Range, charging speed, real-world MPGe.</span>
-                    </span>
-                  </a>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg></span>
-                    <span class="body">
-                      <span class="title">Hybrid / PHEV</span>
-                      <span class="desc">Best of both worlds — if you size it right.</span>
-                    </span>
-                  </a>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><circle cx="7" cy="15" r="2"/><circle cx="17" cy="15" r="2"/></svg></span>
-                    <span class="body">
-                      <span class="title">Petrol & Diesel</span>
-                      <span class="desc">ICE classics with proven reliability.</span>
-                    </span>
-                  </a>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h12l4 6H4z"/><path d="M20 12v6H4v-6"/></svg></span>
-                    <span class="body">
-                      <span class="title">SUVs & Trucks</span>
-                      <span class="desc">Family haulers and weekend rigs.</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mega-col">
-                  <h4>By make</h4>
-                  <ul class="mini-list">
-                    <li><a href="#">Tesla <small>7 models</small></a></li>
-                    <li><a href="#">Toyota <small>32 models</small></a></li>
-                    <li><a href="#">BMW <small>28 models</small></a></li>
-                    <li><a href="#">Hyundai / Kia <small>41 models</small></a></li>
-                    <li><a href="#">Rivian <span class="badge-new">NEW</span></a></li>
-                    <li><a href="#">BYD <small>18 models</small></a></li>
-                    <li><a href="#">Ford <small>24 models</small></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mega-right">
-                <a href="#" class="feature-card">
-                  <img src="https://picsum.photos/seed/carfeat/900/500" alt="">
-                  <div class="overlay"></div>
-                  <div class="meta">
-                    <span class="tag">Long-term test</span>
-                    <h5>10,000 miles in a Model 3</h5>
-                    <p>What's held up, what hasn't.</p>
-                  </div>
-                </a>
-                <ul class="mini-list">
-                  <li><a href="#">EV range calculator <small>Tool →</small></a></li>
-                  <li><a href="#">Safety score explorer <small>Tool →</small></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="mega-foot">
-              <div class="links">
-                <a href="#">New 2026 models</a>
-                <a href="#">Reliability</a>
-              </div>
-              <a href="category.html" class="viewall">Explore all cars
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mega menu: Gadgets -->
-        <div class="nav-item">
-          <button class="nav-trigger" aria-haspopup="true">
-            Gadgets
-            <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="mega wide" role="menu">
-            <div class="mega-body">
-              <div class="mega-left">
-                <div class="mega-col">
-                  <h4>Wearables & Audio</h4>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="7" width="12" height="10" rx="2"/><path d="M9 3h6l-.5 4h-5zM9 17l-.5 4h6l-.5-4"/></svg></span>
-                    <span class="body">
-                      <span class="title">Smartwatches</span>
-                      <span class="desc">Health, fitness and battery-life leaders.</span>
-                    </span>
-                  </a>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0 1 16 0"/><rect x="3" y="12" width="5" height="8" rx="1.5"/><rect x="16" y="12" width="5" height="8" rx="1.5"/></svg></span>
-                    <span class="body">
-                      <span class="title">Headphones & earbuds</span>
-                      <span class="desc">ANC, spatial audio and codec support.</span>
-                    </span>
-                  </a>
-                  <a href="category.html" class="mega-link">
-                    <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg></span>
-                    <span class="body">
-                      <span class="title">Smart rings <span class="badge-new">NEW</span></span>
-                      <span class="desc">The smallest health trackers we've tested.</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mega-col">
-                  <h4>Home & outdoor</h4>
-                  <ul class="mini-list">
-                    <li><a href="#">Drones</a></li>
-                    <li><a href="#">Action cameras</a></li>
-                    <li><a href="#">Streaming sticks</a></li>
-                    <li><a href="#">Robot vacuums</a></li>
-                    <li><a href="#">Smart displays</a></li>
-                    <li><a href="#">E-readers</a></li>
-                    <li><a href="#">Portable speakers</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mega-right">
-                <a href="#" class="feature-card">
-                  <img src="https://picsum.photos/seed/gadgetfeat/900/500" alt="">
-                  <div class="overlay"></div>
-                  <div class="meta">
-                    <span class="tag">Best of 2026</span>
-                    <h5>The only 9 earbuds worth buying</h5>
-                    <p>Tested across 40 hours of commutes.</p>
-                  </div>
-                </a>
-                <ul class="mini-list">
-                  <li><a href="#">Battery champions <small>List →</small></a></li>
-                  <li><a href="#">Suggest a review <small>Form →</small></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="mega-foot">
-              <div class="links">
-                <a href="#">Editor's picks</a>
-              </div>
-              <a href="category.html" class="viewall">Explore all gadgets
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        <a class="nav-trigger" href="category.html">Top Software</a>
         <a class="nav-trigger" href="compare.html">Compare</a>
       </div>
 
       <button class="search-trigger" aria-label="Open search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <span class="label">Search products, brands, reviews…</span>
+        <span class="label">Search ERP, school, hotel, accounting…</span>
         <span class="kbd">⌘K</span>
       </button>
 
@@ -364,7 +223,6 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
         <a href="#" class="btn ghost">Sign in</a>
-        <a href="#" class="btn primary">Get app</a>
       </div>
     </nav>
   </div>
@@ -373,144 +231,330 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="eyebrow"><span class="dot"></span> 12,480 products reviewed · updated daily</div>
-    <h1>Honest reviews for <em>every screen, engine and everything between.</em></h1>
-    <p class="lede">Spec-deep product reviews with a clean SaaS-style interface. Compare phones, laptops, cars and gadgets — side by side, in seconds.</p>
+    <div class="eyebrow"><span class="dot"></span> 642 software · 18,400+ verified reviews · updated weekly</div>
+    <h1>Find the right software <em>for every Nepali business.</em></h1>
+    <p class="lede">Independent reviews, transparent pricing and side-by-side comparison for ERP, accounting, school, hotel, hospital and HR software — built for buyers in 🇳🇵 Nepal.</p>
     <div class="hero-search">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--text-subtle)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input placeholder="Try “iPhone 17 Pro”, “Model Y vs Mach-E”…" />
+      <input placeholder="Try “Tally vs Swastik”, “school ERP”, “hospital HMS”…" />
       <button class="btn primary">Search</button>
     </div>
     <div class="hero-trending">
-      <span>Trending:</span>
-      <a href="product.html" class="chip">iPhone 17 Pro</a>
-      <a href="#" class="chip">Galaxy S26</a>
-      <a href="#" class="chip">MacBook Air M4</a>
-      <a href="#" class="chip">Tesla Model Y Juniper</a>
-      <a href="#" class="chip">Sony WH-1000XM6</a>
+      <span>Popular:</span>
+      <a href="product.html" class="chip">Tally Prime</a>
+      <a href="category.html" class="chip">School ERP</a>
+      <a href="category.html" class="chip">Hotel PMS</a>
+      <a href="category.html" class="chip">HR &amp; Payroll</a>
+      <a href="category.html" class="chip">Odoo for SMBs</a>
     </div>
   </div>
 </section>
 
-<!-- Category Grid -->
-<section>
+<!-- Browse by industry -->
+<section style="padding-top: 30px;">
   <div class="container">
     <div class="sec-head">
       <div>
-        <h2>Browse by category</h2>
-        <p>Jump straight into our most researched product lines.</p>
+        <h2>Browse by industry</h2>
+        <p>Software that's been deployed in your sector — by people you can call.</p>
       </div>
-      <a href="#" class="more">See all categories →</a>
+      <a href="category.html" class="more">All industries →</a>
     </div>
-    <div class="cat-grid">
+    <div class="cat-grid" style="grid-template-columns: repeat(5, 1fr);">
       <a href="category.html" class="cat-card">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-        <div>
-          <h3>Phones & Tablets</h3>
-          <small>2,418 products</small>
+        <div class="ind-tile school">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v6a6 6 0 0012 0v-6"/></svg>
         </div>
-        <div class="thumb"><img src="https://picsum.photos/seed/phonecat/600/400" alt=""/></div>
+        <div>
+          <h3>School &amp; College</h3>
+          <small>28 software · 2,140 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#e3f2f9,#cfe6f3); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <rect x="6" y="14" width="88" height="40" rx="4" fill="#fff" stroke="#0A7AA9" stroke-width="2"/>
+            <rect x="14" y="22" width="36" height="6" rx="2" fill="#0A7AA9" opacity=".4"/>
+            <rect x="14" y="32" width="72" height="3" rx="1.5" fill="#0A7AA9" opacity=".3"/>
+            <rect x="14" y="40" width="50" height="3" rx="1.5" fill="#0A7AA9" opacity=".25"/>
+            <circle cx="50" cy="10" r="6" fill="#0A7AA9"/>
+            <path d="M44 10l4-3 12 5" stroke="#fff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
       </a>
       <a href="category.html" class="cat-card">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg></div>
-        <div>
-          <h3>Laptops</h3>
-          <small>1,206 products</small>
+        <div class="ind-tile factory">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l6 3V9l6 3V9l6 3v9z"/></svg>
         </div>
-        <div class="thumb"><img src="https://picsum.photos/seed/laptopcat/600/400" alt=""/></div>
+        <div>
+          <h3>Manufacturing</h3>
+          <small>34 software · 1,820 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#fdf3e0,#fbe5bf); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <path d="M10 50V25l16 8V25l16 8V25l16 8V25l16 8v17z" fill="#fff" stroke="#b45309" stroke-width="2"/>
+            <rect x="20" y="38" width="6" height="10" fill="#b45309" opacity=".4"/>
+            <rect x="36" y="38" width="6" height="10" fill="#b45309" opacity=".4"/>
+            <rect x="52" y="38" width="6" height="10" fill="#b45309" opacity=".4"/>
+          </svg>
+        </div>
       </a>
       <a href="category.html" class="cat-card">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5"/><circle cx="7" cy="15" r="2"/><circle cx="17" cy="15" r="2"/><path d="M3 11h18v4H3z"/></svg></div>
-        <div>
-          <h3>Cars</h3>
-          <small>834 models</small>
+        <div class="ind-tile hotel">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="11"/><path d="M3 10l9-7 9 7"/></svg>
         </div>
-        <div class="thumb"><img src="https://picsum.photos/seed/carcat/600/400" alt=""/></div>
+        <div>
+          <h3>Hotels</h3>
+          <small>21 software · 980 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#fce7f3,#f9d4e7); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <rect x="14" y="20" width="72" height="32" rx="2" fill="#fff" stroke="#be185d" stroke-width="2"/>
+            <path d="M20 20l30-12 30 12" fill="#fff" stroke="#be185d" stroke-width="2"/>
+            <rect x="22" y="30" width="10" height="10" fill="#be185d" opacity=".35"/>
+            <rect x="38" y="30" width="10" height="10" fill="#be185d" opacity=".35"/>
+            <rect x="54" y="30" width="10" height="10" fill="#be185d" opacity=".35"/>
+            <rect x="70" y="30" width="10" height="10" fill="#be185d" opacity=".35"/>
+          </svg>
+        </div>
       </a>
       <a href="category.html" class="cat-card">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-        <div>
-          <h3>Gadgets</h3>
-          <small>Watches, audio, drones…</small>
+        <div class="ind-tile trade">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/></svg>
         </div>
-        <div class="thumb"><img src="https://picsum.photos/seed/gadgetcat/600/400" alt=""/></div>
+        <div>
+          <h3>Trading</h3>
+          <small>56 software · 3,210 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#e8f6ef,#cdebd9); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <rect x="10" y="20" width="80" height="32" rx="3" fill="#fff" stroke="#15803d" stroke-width="2"/>
+            <polyline points="14,44 30,32 46,38 64,22 84,28" stroke="#15803d" stroke-width="2.5" fill="none"/>
+            <circle cx="30" cy="32" r="3" fill="#15803d"/>
+            <circle cx="64" cy="22" r="3" fill="#15803d"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile online">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><path d="M2 4h3l3 12h11l2-7H6"/></svg>
+        </div>
+        <div>
+          <h3>Online Stores</h3>
+          <small>34 software · 1,440 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#ede9fe,#dccdfb); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <rect x="16" y="20" width="68" height="28" rx="3" fill="#fff" stroke="#6d28d9" stroke-width="2"/>
+            <path d="M22 28h6l3 12h22l3-9H32" stroke="#6d28d9" stroke-width="2" fill="none"/>
+            <circle cx="36" cy="44" r="2.5" fill="#6d28d9"/>
+            <circle cx="50" cy="44" r="2.5" fill="#6d28d9"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile ngo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-7-11a4 4 0 017-2.65A4 4 0 0119 10c0 6.65-7 11-7 11z"/></svg>
+        </div>
+        <div>
+          <h3>NGO &amp; Non-profit</h3>
+          <small>22 software · 410 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#fee2e2,#f7c4c4); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <path d="M50 50s-22-13-22-30a10 10 0 0122-7 10 10 0 0122 7c0 17-22 30-22 30z" fill="#fff" stroke="#b91c1c" stroke-width="2"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile travel">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l20-7-7 20-3-9z"/></svg>
+        </div>
+        <div>
+          <h3>Travel &amp; Trekking</h3>
+          <small>18 software · 320 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#dbeafe,#b9d3f5); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <path d="M14 50L40 14l24 22 14-12 6 26z" fill="#fff" stroke="#1e40af" stroke-width="2"/>
+            <circle cx="74" cy="22" r="5" fill="#1e40af" opacity=".35"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile hydro">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8M5 14a7 7 0 0014 0c0-3-7-12-7-12S5 11 5 14z"/></svg>
+        </div>
+        <div>
+          <h3>Hydro Power</h3>
+          <small>12 software · 180 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#cffafe,#9adde6); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <path d="M14 44C14 24 50 14 50 14s36 10 36 30" fill="none" stroke="#0e7490" stroke-width="2.5"/>
+            <path d="M10 50c14-3 28-3 40 0s26 3 40 0" stroke="#0e7490" stroke-width="2" fill="none"/>
+            <circle cx="50" cy="14" r="5" fill="#0e7490"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile hospital">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16M4 12h16"/></svg>
+        </div>
+        <div>
+          <h3>Hospital &amp; Pharma</h3>
+          <small>26 software · 540 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#fae8ff,#eccaf5); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <rect x="14" y="20" width="72" height="30" rx="3" fill="#fff" stroke="#a21caf" stroke-width="2"/>
+            <path d="M44 26v18M36 35h18" stroke="#a21caf" stroke-width="3"/>
+          </svg>
+        </div>
+      </a>
+      <a href="category.html" class="cat-card">
+        <div class="ind-tile account">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <div>
+          <h3>Banking &amp; Co-op</h3>
+          <small>14 software · 280 reviews</small>
+        </div>
+        <div class="thumb" style="background:linear-gradient(135deg,#ecfeff,#b6e8ee); display:grid; place-items:center;">
+          <svg width="68" height="48" viewBox="0 0 100 60" fill="none">
+            <path d="M14 22l36-12 36 12v6H14z" fill="#fff" stroke="#0e7490" stroke-width="2"/>
+            <rect x="20" y="30" width="6" height="16" fill="#0e7490" opacity=".4"/>
+            <rect x="34" y="30" width="6" height="16" fill="#0e7490" opacity=".4"/>
+            <rect x="48" y="30" width="6" height="16" fill="#0e7490" opacity=".4"/>
+            <rect x="62" y="30" width="6" height="16" fill="#0e7490" opacity=".4"/>
+            <rect x="76" y="30" width="6" height="16" fill="#0e7490" opacity=".4"/>
+            <rect x="14" y="48" width="72" height="4" fill="#0e7490"/>
+          </svg>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Newly reviewed -->
-<section style="padding-top: 20px">
+<!-- Top-rated software (uses new s-card style with vendor logo tiles) -->
+<section style="padding-top: 20px;">
   <div class="container">
     <div class="sec-head">
       <div>
-        <h2>Newly reviewed</h2>
-        <p>Fresh tests from our editors this week.</p>
+        <h2>Top-rated software in Nepal</h2>
+        <p>The most-reviewed B2B tools by buyers like you, this quarter.</p>
       </div>
-      <a href="category.html" class="more">All latest →</a>
+      <a href="category.html" class="more">View all →</a>
     </div>
-    <div class="card-row">
-      <a href="product.html" class="p-card">
-        <div class="img-wrap">
-          <span class="ribbon accent">Editor's choice</span>
-          <button class="add-compare" data-compare-id="iphone-17-pro" aria-label="Add to compare">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
-          <img src="https://picsum.photos/seed/iphone17pro/600/450" alt=""/>
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+
+      <a href="product.html" class="s-card">
+        <span class="ribbon-top">Editor's pick</span>
+        <div class="head">
+          <span class="vlogo lg has-img"><img src="logos/tally.png" alt="Tally"/></span>
+          <div class="meta">
+            <h4 class="name">Tally Prime</h4>
+            <div class="vendor">Tally Solutions · 🇮🇳 India · since 1986</div>
+          </div>
         </div>
-        <div class="brand">Apple</div>
-        <h4>iPhone 17 Pro</h4>
-        <div class="specs"><span>A19 Pro</span><span>6.3″ LTPO</span><span>48MP triple</span></div>
-        <footer>
-          <span class="rating"><span class="star">★</span> 4.8/5</span>
-          <span style="font-size: 12px; color: var(--text-muted);">214 reviews</span>
-        </footer>
-      </a>
-      <a href="product.html" class="p-card">
-        <div class="img-wrap">
-          <button class="add-compare" data-compare-id="s26-ultra" aria-label="Add to compare">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
-          <img src="https://picsum.photos/seed/s26ultra/600/450" alt=""/>
+        <p class="desc">Desktop accounting + GST/VAT + multi-godown inventory. The default pick for Nepali trading and SMB books.</p>
+        <div class="feature-pills">
+          <span>Accounting</span><span>VAT</span><span>Inventory</span><span>Payroll</span>
         </div>
-        <div class="brand">Samsung</div>
-        <h4>Galaxy S26 Ultra</h4>
-        <div class="specs"><span>Snapdragon 8 Gen 5</span><span>6.9″ AMOLED</span><span>200MP</span></div>
-        <footer>
-          <span class="rating"><span class="star">★</span> 4.7/5</span>
-          <span style="font-size: 12px; color: var(--text-muted);">182 reviews</span>
-        </footer>
-      </a>
-      <a href="product.html" class="p-card">
-        <div class="img-wrap">
-          <button class="add-compare" data-compare-id="macbook-air-m4" aria-label="Add to compare">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
-          <img src="https://picsum.photos/seed/macbookm4/600/450" alt=""/>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.6/5 <small style="color:var(--text-subtle); font-weight:500;">(1,240)</small></span>
+          <span class="price">रु 22,500 <small>one-time</small></span>
         </div>
-        <div class="brand">Apple</div>
-        <h4>MacBook Air M4</h4>
-        <div class="specs"><span>M4 10-core</span><span>13.6″ LED</span><span>18h battery</span></div>
-        <footer>
-          <span class="rating"><span class="star">★</span> 4.9/5</span>
-          <span style="font-size: 12px; color: var(--text-muted);">341 reviews</span>
-        </footer>
       </a>
-      <a href="product.html" class="p-card">
-        <div class="img-wrap">
-          <button class="add-compare" data-compare-id="model-y" aria-label="Add to compare">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
-          <img src="https://picsum.photos/seed/modely/600/450" alt=""/>
+
+      <a href="product.html" class="s-card">
+        <div class="head">
+          <span class="vlogo swastik lg">SW</span>
+          <div class="meta">
+            <h4 class="name">Swastik ERP</h4>
+            <div class="vendor">Swastik Technosoft · 🇳🇵 Nepal</div>
+          </div>
         </div>
-        <div class="brand">Tesla</div>
-        <h4>Model Y Juniper</h4>
-        <div class="specs"><span>Dual motor</span><span>330 mi range</span><span>0–60 in 4.1s</span></div>
-        <footer>
-          <span class="rating"><span class="star">★</span> 4.5/5</span>
-          <span style="font-size: 12px; color: var(--text-muted);">96 reviews</span>
-        </footer>
+        <p class="desc">Made-in-Nepal ERP for trading and small manufacturing. Strong VAT-ready compliance and local support.</p>
+        <div class="feature-pills">
+          <span>ERP</span><span>VAT-NP</span><span>POS</span><span>Manufacturing</span>
+        </div>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.5/5 <small style="color:var(--text-subtle); font-weight:500;">(312)</small></span>
+          <span class="price">रु 18,000 <small>one-time</small></span>
+        </div>
       </a>
+
+      <a href="product.html" class="s-card">
+        <div class="head">
+          <span class="vlogo veda lg">V</span>
+          <div class="meta">
+            <h4 class="name">Veda School</h4>
+            <div class="vendor">Veda Apps · 🇳🇵 Nepal</div>
+          </div>
+        </div>
+        <p class="desc">School ERP with attendance, exam, library and parent app. Used in 600+ schools across Nepal.</p>
+        <div class="feature-pills">
+          <span>School ERP</span><span>Attendance</span><span>Exam</span><span>Parent app</span>
+        </div>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.7/5 <small style="color:var(--text-subtle); font-weight:500;">(412)</small></span>
+          <span class="price">रु 8,500 <small>/yr / school</small></span>
+        </div>
+      </a>
+
+      <a href="product.html" class="s-card">
+        <div class="head">
+          <span class="vlogo lg has-img"><img src="logos/odoo.svg" alt="Odoo"/></span>
+          <div class="meta">
+            <h4 class="name">Odoo Community</h4>
+            <div class="vendor">Odoo S.A. · 🇧🇪 Belgium</div>
+          </div>
+        </div>
+        <p class="desc">Open-source modular ERP. Sales, CRM, inventory, HR, project — all in one. Self-hostable.</p>
+        <div class="feature-pills">
+          <span>ERP</span><span>CRM</span><span>HR</span><span>Open source</span>
+        </div>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.4/5 <small style="color:var(--text-subtle); font-weight:500;">(2,108)</small></span>
+          <span class="price">Free <small>community</small></span>
+        </div>
+      </a>
+
+      <a href="product.html" class="s-card">
+        <div class="head">
+          <span class="vlogo bidhee lg">B</span>
+          <div class="meta">
+            <h4 class="name">Bidhee Hospital</h4>
+            <div class="vendor">Bidhee Pvt. Ltd. · 🇳🇵 Nepal</div>
+          </div>
+        </div>
+        <p class="desc">Hospital management system covering OPD/IPD, pharmacy, lab, billing and insurance claims.</p>
+        <div class="feature-pills">
+          <span>HMS</span><span>OPD/IPD</span><span>Pharmacy</span><span>Lab</span>
+        </div>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.5/5 <small style="color:var(--text-subtle); font-weight:500;">(96)</small></span>
+          <span class="price">Custom <small>quote</small></span>
+        </div>
+      </a>
+
+      <a href="product.html" class="s-card">
+        <div class="head">
+          <span class="vlogo synergy lg">SY</span>
+          <div class="meta">
+            <h4 class="name">Synergy ERP</h4>
+            <div class="vendor">Synergy Tech · 🇳🇵 Nepal</div>
+          </div>
+        </div>
+        <p class="desc">Cloud-first ERP for hotels, manufacturing and trading. Built and supported in Kathmandu.</p>
+        <div class="feature-pills">
+          <span>Cloud ERP</span><span>PMS</span><span>HR</span><span>Multi-branch</span>
+        </div>
+        <div class="stats">
+          <span class="rating"><span class="star">★</span> 4.2/5 <small style="color:var(--text-subtle); font-weight:500;">(186)</small></span>
+          <span class="price">रु 1,200 <small>/user / mo</small></span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -518,58 +562,144 @@
 <!-- Promotional banner -->
 <section style="padding-top: 0;">
   <div class="container">
-    <a href="product.html" class="promo-banner">
-      <div class="promo-bg">
-        <img src="https://picsum.photos/seed/iphone17pro-banner/1800/700" alt=""/>
-      </div>
+    <a href="product.html" class="promo-banner" style="aspect-ratio: 21/8;">
+      <div class="promo-bg" style="background: linear-gradient(135deg, #1f4d68 0%, #0A7AA9 60%, #333F4B 100%);"></div>
       <div class="promo-content">
-        <div class="promo-tag"><span class="dot"></span> Latest review</div>
-        <h2>iPhone 17 Pro — the most quietly confident iPhone yet.</h2>
-        <p>A 28-day deep dive. Camera tests, sustained benchmarks, thermals, and the verdict in 8 minutes.</p>
+        <div class="promo-tag"><span class="dot"></span> 2026 buyer report</div>
+        <h2>Top 10 ERP for Nepali SMBs — what we found.</h2>
+        <p>14 features, 4 deployment models, 5-year TCO modelled per industry. Free download, no email gate.</p>
         <span class="promo-cta">
-          Check our latest review
+          Read the full report
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </span>
+      </div>
+      <!-- Decorative inline UI mock to make banner relevant (not stock image) -->
+      <div style="position:absolute; right: 30px; top: 50%; transform: translateY(-50%); opacity:.85; pointer-events:none; z-index:1;">
+        <svg width="280" height="200" viewBox="0 0 320 220" fill="none">
+          <rect x="10" y="10" width="300" height="200" rx="12" fill="#fff" opacity=".07"/>
+          <rect x="20" y="22" width="280" height="40" rx="6" fill="#fff" opacity=".15"/>
+          <rect x="32" y="36" width="80" height="8" rx="3" fill="#fff" opacity=".5"/>
+          <rect x="32" y="48" width="120" height="6" rx="3" fill="#fff" opacity=".3"/>
+          <rect x="20" y="74" width="84" height="60" rx="6" fill="#fff" opacity=".15"/>
+          <rect x="116" y="74" width="84" height="60" rx="6" fill="#fff" opacity=".15"/>
+          <rect x="212" y="74" width="84" height="60" rx="6" fill="#fff" opacity=".15"/>
+          <rect x="20" y="146" width="276" height="50" rx="6" fill="#fff" opacity=".15"/>
+          <polyline points="32,182 60,168 90,176 120,156 152,160 184,144 220,150 256,138 286,126" stroke="#7cd1ff" stroke-width="2.5" fill="none"/>
+        </svg>
       </div>
     </a>
   </div>
 </section>
 
-<!-- Collections -->
+<!-- Featured by industry — list view sample -->
 <section>
   <div class="container">
     <div class="sec-head">
       <div>
-        <h2>Editor collections</h2>
-        <p>Curated shortlists we trust — updated every month.</p>
+        <h2>Featured for School &amp; College</h2>
+        <p>Tools for fees, attendance, exam and parent communication.</p>
       </div>
-      <a href="#" class="more">All collections →</a>
+      <a href="category.html" class="more">All school software →</a>
     </div>
-    <div class="collections">
-      <a href="#" class="coll">
-        <img src="https://picsum.photos/seed/devlaptops/900/600" alt=""/>
-        <div class="overlay"></div>
-        <div class="inner">
-          <div class="count">14 picks · updated Apr 2026</div>
-          <h3>Best laptops for developers</h3>
+
+    <div style="display:grid; gap:14px;">
+
+      <a href="product.html" class="s-row">
+        <span class="vlogo veda lg">V</span>
+        <div class="body">
+          <h3>Veda School</h3>
+          <div class="vendor">Veda Apps · 🇳🇵 Nepal · since 2016</div>
+          <p>End-to-end school ERP — fees, attendance, exam, library, transport, hostel and a parent mobile app. Trusted by 600+ schools across Nepal.</p>
+          <div class="pills">
+            <span>Attendance</span><span>Exam</span><span>Fee management</span><span>Library</span><span>Parent app</span><span>SMS</span>
+          </div>
+        </div>
+        <div class="side">
+          <div class="rating-block">
+            <div class="big">4.7<small>/5</small></div>
+            <div class="stars">★★★★★</div>
+            <small class="reviews">412 reviews</small>
+          </div>
+          <div class="price-tag"><b>रु 8,500</b>/yr · per school</div>
+          <div class="actions">
+            <span class="btn primary sm">Get free demo</span>
+            <span class="btn outline sm">Compare</span>
+          </div>
         </div>
       </a>
-      <a href="#" class="coll">
-        <img src="https://picsum.photos/seed/dailyphones/900/600" alt=""/>
-        <div class="overlay"></div>
-        <div class="inner">
-          <div class="count">9 picks</div>
-          <h3>Best phones for daily drivers</h3>
+
+      <a href="product.html" class="s-row">
+        <span class="vlogo paath lg">PS</span>
+        <div class="body">
+          <h3>Paathsahala</h3>
+          <div class="vendor">Paathsahala Inc. · 🇳🇵 Nepal</div>
+          <p>School management with strong online classes and digital exam tooling. Popular with private schools running blended-learning programs.</p>
+          <div class="pills">
+            <span>School ERP</span><span>Online classes</span><span>Digital exam</span><span>Result publishing</span>
+          </div>
+        </div>
+        <div class="side">
+          <div class="rating-block">
+            <div class="big">4.4<small>/5</small></div>
+            <div class="stars">★★★★☆</div>
+            <small class="reviews">218 reviews</small>
+          </div>
+          <div class="price-tag"><b>रु 12,000</b>/yr · per school</div>
+          <div class="actions">
+            <span class="btn primary sm">Get free demo</span>
+            <span class="btn outline sm">Compare</span>
+          </div>
         </div>
       </a>
-      <a href="#" class="coll">
-        <img src="https://picsum.photos/seed/familyevs/900/600" alt=""/>
-        <div class="overlay"></div>
-        <div class="inner">
-          <div class="count">12 picks</div>
-          <h3>Family EVs that actually fit kids</h3>
+
+      <a href="product.html" class="s-row">
+        <span class="vlogo eshik lg">eS</span>
+        <div class="body">
+          <h3>eShikshya</h3>
+          <div class="vendor">Young Innovations · 🇳🇵 Nepal</div>
+          <p>Lightweight, modular school management — strong on transcripts, fee receipt printing and ID card design. Good budget option for community schools.</p>
+          <div class="pills">
+            <span>Lightweight</span><span>Transcripts</span><span>Fee receipt</span><span>ID cards</span>
+          </div>
+        </div>
+        <div class="side">
+          <div class="rating-block">
+            <div class="big">4.2<small>/5</small></div>
+            <div class="stars">★★★★☆</div>
+            <small class="reviews">142 reviews</small>
+          </div>
+          <div class="price-tag"><b>रु 4,800</b>/yr · per school</div>
+          <div class="actions">
+            <span class="btn primary sm">Get free demo</span>
+            <span class="btn outline sm">Compare</span>
+          </div>
         </div>
       </a>
+
+      <a href="product.html" class="s-row">
+        <span class="vlogo lg has-img"><img src="logos/moodle.svg" alt="Moodle"/></span>
+        <div class="body">
+          <h3>Moodle</h3>
+          <div class="vendor">Moodle HQ · 🇦🇺 Australia · open source</div>
+          <p>The world's most-deployed LMS. Free and open-source, with strong support for assignments, quizzes, SCORM and live classes via plugins.</p>
+          <div class="pills">
+            <span>LMS</span><span>Open source</span><span>Self-host</span><span>Assignments</span><span>Quizzes</span>
+          </div>
+        </div>
+        <div class="side">
+          <div class="rating-block">
+            <div class="big">4.3<small>/5</small></div>
+            <div class="stars">★★★★☆</div>
+            <small class="reviews">3,940 reviews</small>
+          </div>
+          <div class="price-tag"><b>Free</b> · open-source</div>
+          <div class="actions">
+            <span class="btn primary sm">Get free demo</span>
+            <span class="btn outline sm">Compare</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -579,46 +709,79 @@
   <div class="container">
     <div class="compare-teaser">
       <div>
-        <h2>Side-by-side comparison, without the spreadsheet.</h2>
-        <p>Pick up to 3 products in the same category. We surface only the specs that differ — colour-coded so you can decide in 30 seconds.</p>
+        <h2>Compare any two software side-by-side.</h2>
+        <p>Pick up to 3 products in the same category. We surface the features, pricing and country of origin that differ — so you can shortlist in 30 seconds.</p>
         <a href="compare.html" class="btn primary">Open the comparator →</a>
       </div>
       <div class="compare-visual" aria-hidden="true">
         <div class="col">
-          <div class="ph"></div>
-          <strong>iPhone 17 Pro</strong>
-          <div>A19 Pro</div>
-          <div class="good">48MP ƒ/1.7</div>
-          <div>6.3″ LTPO</div>
-          <div class="bad">3,650 mAh</div>
+          <div class="ph" style="background: linear-gradient(135deg,#0a3d62,#1e6091);"></div>
+          <strong>Tally Prime</strong>
+          <div>On-premise</div>
+          <div class="good">रु 22,500 one-time</div>
+          <div>Mobile read-only</div>
+          <div class="bad">No CRM</div>
         </div>
         <div class="col">
-          <div class="ph"></div>
-          <strong>Pixel 10 Pro</strong>
-          <div>Tensor G5</div>
-          <div>50MP ƒ/1.6</div>
-          <div>6.4″ LTPO</div>
-          <div class="good">4,700 mAh</div>
+          <div class="ph" style="background: linear-gradient(135deg,#b91c1c,#ef4444);"></div>
+          <strong>Swastik</strong>
+          <div>On-prem · Cloud</div>
+          <div class="good">रु 18,000 one-time</div>
+          <div>Native NP support</div>
+          <div>Manufacturing module</div>
         </div>
         <div class="col">
-          <div class="ph"></div>
-          <strong>S26 Ultra</strong>
-          <div class="good">SD 8 Gen 5</div>
-          <div class="good">200MP ƒ/1.7</div>
-          <div class="good">6.9″ AMOLED</div>
-          <div>5,000 mAh</div>
+          <div class="ph" style="background: linear-gradient(135deg,#714b67,#8e6c83);"></div>
+          <strong>Odoo</strong>
+          <div class="good">Cloud · Self-host</div>
+          <div class="good">Free (community)</div>
+          <div class="good">CRM + HR + Project</div>
+          <div>Steeper learning</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Compare dock -->
+<!-- For vendors -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="compare-teaser" style="background: var(--ink); color: #fff; border-color: var(--ink);">
+      <div>
+        <h2 style="color:#fff;">List your software on Infer Nepal.</h2>
+        <p style="color: rgba(255,255,255,.78);">Reach 38,000+ Nepali decision-makers shopping for ERP, accounting, school, hotel and HR tools. Premium and Top listings available.</p>
+        <a href="#" class="btn warm">Become a vendor →</a>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 28px; font-weight: 800; color:#fff;">38K+</div>
+          <div style="font-size: 12px; color: rgba(255,255,255,.7);">Monthly software buyers</div>
+        </div>
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 28px; font-weight: 800; color:#fff;">2,800</div>
+          <div style="font-size: 12px; color: rgba(255,255,255,.7);">Demo requests / month</div>
+        </div>
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 28px; font-weight: 800; color:#fff;">18.4K</div>
+          <div style="font-size: 12px; color: rgba(255,255,255,.7);">Verified user reviews</div>
+        </div>
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 28px; font-weight: 800; color:#fff;">642</div>
+          <div style="font-size: 12px; color: rgba(255,255,255,.7);">Software listed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compare dock — disabled for now, re-enable when comparison feature is ready
 <div class="compare-dock" role="region" aria-label="Comparison tray">
   <div class="slots"></div>
   <span class="count-label">0 items selected</span>
   <a href="compare.html" class="btn primary sm dock-cta disabled">Compare →</a>
 </div>
+-->
+
 
 <!-- Footer -->
 <footer class="site">
@@ -626,58 +789,69 @@
     <div class="f-grid">
       <div>
         <a href="index.html" class="brand">
-          <img src="logo.png" alt="Revio" class="brand-logo" />
+          <img src="logo.png" alt="Infer Nepal" class="brand-logo" />
         </a>
         <p style="color:var(--text-muted); font-size: 13px; margin-top:12px; max-width: 320px;">
-          Revio tests products with laboratory-grade tools and publishes the raw data. No sponsored verdicts.
+          Nepal's independent B2B software discovery platform. Verified reviews, transparent pricing,
+          unbiased editor scores. No pay-to-play rankings.
         </p>
         <div class="newsletter">
-          <input placeholder="you@domain.com" />
+          <input placeholder="you@company.com" />
           <button>Subscribe</button>
         </div>
-        <div class="f-tag">One short digest every Friday. No spam.</div>
+        <div class="f-tag">One short digest every Friday. Nepali SMB software news.</div>
+      </div>
+      <div>
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="category.html">School / College</a></li>
+          <li><a href="category.html">Manufacturing</a></li>
+          <li><a href="category.html">Hotels</a></li>
+          <li><a href="category.html">Trading</a></li>
+          <li><a href="category.html">Online Stores</a></li>
+          <li><a href="category.html">NGO</a></li>
+          <li><a href="category.html">Travel &amp; Trekking</a></li>
+          <li><a href="category.html">Hospital</a></li>
+        </ul>
       </div>
       <div>
         <h5>Categories</h5>
         <ul>
-          <li><a href="category.html">Phones</a></li>
-          <li><a href="category.html">Laptops</a></li>
-          <li><a href="category.html">Cars</a></li>
-          <li><a href="category.html">Gadgets</a></li>
+          <li><a href="category.html">Accounting</a></li>
+          <li><a href="category.html">ERP</a></li>
+          <li><a href="category.html">Inventory</a></li>
+          <li><a href="category.html">HRMS</a></li>
+          <li><a href="category.html">CRM</a></li>
+          <li><a href="category.html">PMS / Hotel</a></li>
         </ul>
       </div>
       <div>
-        <h5>Tools</h5>
+        <h5>For vendors</h5>
         <ul>
-          <li><a href="compare.html">Compare</a></li>
-          <li><a href="#">Benchmark explorer</a></li>
-          <li><a href="#">Glossary</a></li>
+          <li><a href="#">List your software</a></li>
+          <li><a href="#">Premium listing</a></li>
+          <li><a href="#">Lead generation</a></li>
+          <li><a href="#">Advertise</a></li>
         </ul>
       </div>
       <div>
         <h5>Company</h5>
         <ul>
-          <li><a href="#">How we test</a></li>
+          <li><a href="#">About Infer Nepal</a></li>
+          <li><a href="#">How we score</a></li>
           <li><a href="#">Editorial policy</a></li>
-          <li><a href="#">Careers</a></li>
           <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
         </ul>
       </div>
     </div>
     <div class="f-bottom">
-      <span>© 2026 Revio Media. All rights reserved.</span>
-      <span>Made with care in three timezones.</span>
+      <span>© 2026 Infer Nepal · infernepal.com</span>
+      <span>Made in Kathmandu 🇳🇵</span>
     </div>
   </div>
 </footer>
 
+<div class="menu-backdrop" aria-hidden="true"></div>
 <script src="app.js"></script>
 </body>
 </html>

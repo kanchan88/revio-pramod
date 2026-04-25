@@ -1,9 +1,83 @@
 /* ====================================================================
-   Revio · Shared client logic
+   Infer Nepal · Shared client logic
    - Theme toggle
+   - Mega-menu hover/click handler
    - Compare state (localStorage)
-   - Product catalogue (used by compare.html)
    ==================================================================== */
+
+/* ---------- Mega menu: open on hover (with intent delay) + click toggle ---------- */
+(function navMega(){
+  const isMobile = () => window.innerWidth <= 900;
+  const items = document.querySelectorAll('.nav-links .nav-item');
+  const HOVER_OPEN_DELAY = 80;
+  const HOVER_CLOSE_DELAY = 240;
+
+  items.forEach(item => {
+    let openT = null, closeT = null;
+    const open  = () => { clearTimeout(closeT); item.classList.add('open'); };
+    const close = () => { clearTimeout(openT);  item.classList.remove('open'); };
+
+    item.addEventListener('mouseenter', () => {
+      if (isMobile()) return;
+      clearTimeout(closeT);
+      openT = setTimeout(open, HOVER_OPEN_DELAY);
+    });
+    item.addEventListener('mouseleave', () => {
+      if (isMobile()) return;
+      clearTimeout(openT);
+      closeT = setTimeout(close, HOVER_CLOSE_DELAY);
+    });
+
+    const trigger = item.querySelector('.nav-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const wasOpen = item.classList.contains('open');
+        // On desktop, close other open items. On mobile, allow multiple.
+        if (!isMobile()) {
+          items.forEach(i => { if (i !== item) i.classList.remove('open'); });
+        }
+        if (wasOpen) close(); else open();
+      });
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isMobile()) return;
+    if (!e.target.closest('.nav-links .nav-item')) {
+      items.forEach(i => i.classList.remove('open'));
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      items.forEach(i => i.classList.remove('open'));
+      document.body.classList.remove('menu-open');
+    }
+  });
+})();
+
+/* ---------- Mobile hamburger ---------- */
+(function mobileMenu(){
+  const toggle = document.querySelector('.menu-toggle');
+  const backdrop = document.querySelector('.menu-backdrop');
+  if (!toggle) return;
+
+  const close = () => document.body.classList.remove('menu-open');
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.body.classList.toggle('menu-open');
+  });
+  backdrop && backdrop.addEventListener('click', close);
+
+  // Close drawer when a nav link is followed
+  document.querySelectorAll('.nav-links a[href]:not(.nav-trigger)').forEach(a => {
+    a.addEventListener('click', () => close());
+  });
+
+  // Close on viewport widen past mobile breakpoint
+  let mql = window.matchMedia('(min-width: 901px)');
+  mql.addEventListener('change', e => { if (e.matches) close(); });
+})();
 
 const STORAGE_KEY = 'revio.compare';
 
