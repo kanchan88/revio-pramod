@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Hero — Search & trending',
-    'description' => 'Big headline + search box + trending pills. Edit any text inline.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['hero', 'header', 'search'],
-    'content'     => <<<HTML
+/**
+ * Title: Hero — Search & trending
+ * Slug: infer-nepal/hero
+ * Categories: infer-nepal
+ * Description: Big headline + search box + trending pills. Edit any text inline.
+ * Keywords: hero, header, search
+ */
+?>
 <!-- wp:html -->
 <section class="hero">
   <div class="container">
@@ -27,5 +29,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

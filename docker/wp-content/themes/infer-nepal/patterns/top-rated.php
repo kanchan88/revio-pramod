@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Top-rated software (live, 6 cards)',
-    'description' => 'Auto-populated grid of the 6 highest-rated software in the catalogue.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['software', 'top', 'rated', 'cards'],
-    'content'     => <<<HTML
+/**
+ * Title: Top-rated software (live, 6 cards)
+ * Slug: infer-nepal/top-rated
+ * Categories: infer-nepal
+ * Description: Auto-populated grid of the 6 highest-rated software in the catalogue.
+ * Keywords: software, top, rated, cards
+ */
+?>
 <!-- wp:html -->
 <section style="padding-top: 20px;">
   <div class="container">
@@ -19,5 +21,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

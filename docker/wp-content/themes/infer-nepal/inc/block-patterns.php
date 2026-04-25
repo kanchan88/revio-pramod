@@ -10,40 +10,15 @@
 
 if (!defined('ABSPATH')) { exit; }
 
+// Custom category so patterns appear under "Infer Nepal" in the inserter.
+// WordPress auto-discovers pattern files inside the theme's /patterns/
+// directory (each file just needs a header comment with Title + Slug),
+// so we don't manually register them here.
 add_action('init', function () {
-
-    // Custom category so patterns are easy to find
     if (function_exists('register_block_pattern_category')) {
         register_block_pattern_category('infer-nepal', [
             'label' => __('Infer Nepal', 'infer-nepal'),
         ]);
-    }
-
-    if (!function_exists('register_block_pattern')) return;
-
-    /* ------------------------------------------------------------------
-     * Auto-load every .php file in /patterns/ as a registered pattern.
-     * Each pattern file returns an array shaped like:
-     *   [
-     *     'title'      => 'Hero — search',
-     *     'categories' => ['infer-nepal'],
-     *     'content'    => '<!-- wp:html -->…',
-     *     'description'=> 'Optional',
-     *   ]
-     * ------------------------------------------------------------------ */
-    $dir = get_theme_file_path('patterns');
-    foreach (glob($dir . '/*.php') as $file) {
-        $slug    = 'infer-nepal/' . basename($file, '.php');
-        $pattern = include $file;
-        if (is_array($pattern) && !empty($pattern['title']) && !empty($pattern['content'])) {
-            register_block_pattern($slug, [
-                'title'       => $pattern['title'],
-                'categories'  => $pattern['categories'] ?? ['infer-nepal'],
-                'content'     => $pattern['content'],
-                'description' => $pattern['description'] ?? '',
-                'keywords'    => $pattern['keywords'] ?? [],
-            ]);
-        }
     }
 });
 

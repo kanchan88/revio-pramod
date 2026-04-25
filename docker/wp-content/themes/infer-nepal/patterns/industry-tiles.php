@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Industry tiles (live)',
-    'description' => 'Auto-populated grid of industry taxonomies — pulls live counts from the Software CPT.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['industries', 'category', 'grid'],
-    'content'     => <<<HTML
+/**
+ * Title: Industry tiles (live)
+ * Slug: infer-nepal/industry-tiles
+ * Categories: infer-nepal
+ * Description: Auto-populated grid of industry taxonomies — pulls live counts from the Software CPT.
+ * Keywords: industries, category, grid
+ */
+?>
 <!-- wp:html -->
 <section style="padding-top: 30px;">
   <div class="container">
@@ -19,5 +21,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

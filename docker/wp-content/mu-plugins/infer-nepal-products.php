@@ -75,13 +75,34 @@ add_action('init', function () {
         'has_mobile_app'     => 'boolean',
         'has_api'            => 'boolean',
         'free_trial'         => 'boolean',
-        'deployment'         => 'string',  // On-premise | Cloud | Hybrid
-        'company_size'       => 'string',  // 1-10 | 11-50 | 51-200 | 200+
+        'deployment'         => 'string',
+        'company_size'       => 'string',
         'rating'             => 'number',
         'review_count'       => 'integer',
         'logo_url'           => 'string',
-        'included_features'  => 'string',  // comma separated
+        'included_features'  => 'string',
         'excluded_features'  => 'string',
+
+        /* Rich fields — used by the single-software page templates */
+        'tagline'            => 'string',
+        'languages'          => 'string',  // English · नेपाली · हिंदी
+        'headquarters'       => 'string',  // Bengaluru, India
+        'founded'            => 'string',  // 1986
+        'customers'          => 'string',  // 2M+ worldwide
+        'partners_in_nepal'  => 'string',  // 14
+        'support_hours'      => 'string',
+        'verdict'            => 'string',  // Editorial recommendation paragraph
+        'best_fit_for'       => 'string',  // 1–2 lines
+        'look_elsewhere'     => 'string',  // 1–2 lines
+        /* JSON-encoded arrays for repeating sections */
+        'awards_json'        => 'string',
+        'pros_json'          => 'string',
+        'cons_json'          => 'string',
+        'feature_modules_json' => 'string', // [{section: "Accounting", cards: [{icon, title, items[]}]}]
+        'pricing_tiers_json' => 'string',   // [{name, blurb, price_cur, price_num, per, items[], cta_label, popular}]
+        'sample_reviews_json'=> 'string',   // [{name, role, industry, size, time, rating, title, body, pros, cons, tags[]}]
+        'faq_json'           => 'string',   // [{q, a}]
+        'specs_json'         => 'string',   // [{title, rows: {label: value}}]
     ];
     foreach ($fields as $key => $type) {
         register_post_meta('software', $key, [
@@ -95,8 +116,13 @@ add_action('init', function () {
 
 /* =================================================================
    3. Seed the product catalogue (idempotent — runs once)
+   Skip while WordPress is being installed / before the schema exists.
    ================================================================= */
 add_action('init', function () {
+    if (defined('WP_INSTALLING') && WP_INSTALLING)              return;
+    if (function_exists('wp_installing') && wp_installing())    return;
+    if (!function_exists('is_blog_installed') || !is_blog_installed()) return;
+
     if (get_option('inp_products_seeded') === '1') return;
     if (!post_type_exists('software'))            return;
 
@@ -122,27 +148,167 @@ add_action('init', function () {
     /* Product catalogue — sourced from Product-Domains.xlsx */
     $products = [
 
-        /* ---------- Tally Prime (Editor's pick) ---------- */
+        /* ---------- Tally Prime (Editor's pick — full showcase) ---------- */
         [
             'title'      => 'Tally Prime',
             'excerpt'    => 'Desktop-first accounting, inventory, GST/VAT and compliance suite trusted by 2M+ SMBs across South Asia.',
-            'content'    => 'Tally Prime ships double-entry bookkeeping, multi-godown inventory, payroll, banking, e-invoicing and 400+ pre-built reports. Designed to be operated by a single accountant without IT support.',
+            'content'    => "<p>Tally Prime is a desktop-first accounting, inventory and compliance suite trusted by over <strong>2 million SMBs</strong> across South Asia. It bundles double-entry bookkeeping, GST/VAT returns, multi-godown inventory, payroll, banking, e-invoicing and 400+ pre-built reports — designed to be operated by a single accountant without IT support.</p>\n<p>Widely deployed across <strong>trading companies, manufacturing, hotels and online stores</strong> in Nepal.</p>",
             'meta'       => [
                 'vendor'            => 'Tally Solutions Pvt. Ltd.',
                 'website_url'       => 'https://tallysolutions.com',
                 'pricing_model'     => 'One-time',
-                'price'             => 'NPR 22,500 (Silver) · NPR 67,500 (Gold)',
+                'price'             => 'NPR 22,500',
                 'maturity'          => 'Mature · 30+ yrs',
                 'has_mobile_app'    => true,
                 'has_api'           => true,
                 'free_trial'        => true,
                 'deployment'        => 'On-premise + Cloud add-on',
-                'company_size'      => '11-200',
+                'company_size'      => 'Small & Mid (10–500)',
                 'rating'            => 4.6,
                 'review_count'      => 1240,
                 'logo_url'          => $base . 'tally.png',
                 'included_features' => 'Books & Ledgers, VAT Return, Inventory, Payroll, Banking, GST, e-Invoicing',
-                'excluded_features' => 'Native CRM, Project costing, Hospital module, E-commerce storefront',
+                'excluded_features' => 'Native CRM, Project costing, Hospital module, E-commerce storefront, Multi-user real-time editing',
+                'tagline'           => 'Tally Prime is a desktop-first accounting, inventory and compliance suite trusted by over 2 million SMBs across South Asia. Widely deployed across trading companies, manufacturing, hotels and online stores in Nepal.',
+                'languages'         => 'English · नेपाली · हिंदी',
+                'headquarters'      => 'Bengaluru, India 🇮🇳',
+                'founded'           => '1986',
+                'customers'         => '2,000,000+ worldwide',
+                'partners_in_nepal' => '14 (Kathmandu, Pokhara, Biratnagar, Butwal)',
+                'support_hours'     => 'Sun–Fri, 10:00–18:00 NPT (partner)',
+                'verdict'           => "For Nepali SMBs that need solid double-entry accounting, multi-godown inventory and a painless VAT return workflow, Tally Prime remains the most cost-effective pick in the market. Its keyboard-first UI is the fastest way for an experienced accountant to enter 200+ vouchers an hour, and the local partner network for training and AMC is unmatched. We mark it down only on collaboration — it isn't built for multiple simultaneous users without the cloud add-on.",
+                'best_fit_for'      => 'Trading companies, distributors, retailers, small manufacturing & chartered accountants managing 5–500 books.',
+                'look_elsewhere'    => 'You need a true multi-user web ERP, custom workflows, or HR & project modules natively (consider Odoo or Synergy).',
+                'awards_json'       => json_encode([
+                    ['title' => "Editor's Pick · Accounting", 'medal' => 'brand'],
+                    ['title' => '#1 in Trading sector',         'medal' => '1'],
+                    ['title' => '#2 in Small Manufacturing',    'medal' => 'silver'],
+                    ['title' => '#3 in Hotels & Hospitality',   'medal' => 'bronze'],
+                ]),
+                'pros_json'         => json_encode([
+                    ['title' => 'Keyboard-driven entry is the fastest in the category', 'body' => 'accountants regularly post 200+ vouchers/hour'],
+                    ['title' => 'Built-in VAT/GST return generator',  'body' => 'reconciles against sales & purchase registers'],
+                    ['title' => 'Multi-godown inventory',             'body' => 'with batch, expiry, MRP and serial-number tracking'],
+                    ['title' => 'One-time license',                   'body' => 'no per-user SaaS bloat, predictable TCO'],
+                    ['title' => 'Strong local partner network',       'body' => 'Kathmandu, Pokhara & Biratnagar for training & AMC'],
+                ]),
+                'cons_json'         => json_encode([
+                    ['title' => 'Multi-user requires Cloud add-on',  'body' => '≈ NPR 600/user/month'],
+                    ['title' => 'Reports UI feels dated',            'body' => 'compared to modern web ERPs'],
+                    ['title' => 'Custom workflows need a TDL dev',   'body' => 'e.g. multi-step approvals'],
+                    ['title' => 'Mobile app is read-only',           'body' => 'entry must still happen on Windows'],
+                ]),
+                'feature_modules_json' => json_encode([
+                    ['title' => 'Accounting & finance', 'cards' => [
+                        ['title' => 'Books & Ledgers',  'items' => ['Unlimited groups, ledgers and cost centres','Multi-currency with auto-revaluation','Cheque printing & bank reconciliation','Post-dated & recurring vouchers']],
+                        ['title' => 'VAT / GST & Compliance', 'items' => ['VAT return for Nepal IRD (monthly & quarterly)','e-Invoice JSON with QR (India GST)','TDS, TCS and excise reports','Audit trail with edit-log lock']],
+                    ]],
+                    ['title' => 'Sales & receivables', 'cards' => [
+                        ['title' => 'Order & Invoicing', 'items' => ['Sales orders → delivery → invoice flow','Customisable invoice templates (TDL)','Price lists by party, region, season','Discount & scheme management']],
+                        ['title' => 'Receivables & Reminders', 'items' => ['Outstanding aging by party & group','Automated WhatsApp/email reminders','Credit-limit blocking on new sales','Receipt allocation & on-account tracking']],
+                    ]],
+                    ['title' => 'Inventory & warehousing', 'cards' => [
+                        ['title' => 'Stock control', 'items' => ['Multi-godown with location-wise stock','Batch, expiry, MRP, serial & barcode','Manufacturing journals & BOM','Re-order level & min/max alerts']],
+                        ['title' => 'Purchase & payables', 'items' => ['Purchase order → GRN → bill workflow','Vendor scorecard & lead-time tracking','Landed cost allocation','Payable aging & cheque printing']],
+                    ]],
+                    ['title' => 'Operations', 'cards' => [
+                        ['title' => 'Payroll (basic)', 'items' => ['Salary structure with allowances & deductions','Attendance import from biometric','Provident fund, CIT & SST computations','Payslip PDF email']],
+                        ['title' => 'Banking', 'items' => ['Auto bank statement import (CSV/Excel)','Reconciliation with one-click matching','Connected banking with NIC ASIA, NIBL, HBL','Cheque printing for 30+ Nepali banks']],
+                    ]],
+                ]),
+                'pricing_tiers_json' => json_encode([
+                    ['name' => 'Silver · Single user', 'blurb' => 'Perfect for a sole proprietor or single-accountant office.',
+                     'price_cur' => 'रु', 'price_num' => '22,500', 'per' => 'one-time',
+                     'items' => ['1 user · 1 PC','All accounting & inventory features','VAT return & compliance','1 year free upgrades',
+                                 ['label'=>'Multi-user access','no'=>true],['label'=>'Remote access','no'=>true]],
+                     'cta_label' => 'Get Silver'],
+                    ['name' => 'Gold · Multi user', 'blurb' => 'For SMBs with 2–10 simultaneous users on a LAN.',
+                     'price_cur' => 'रु', 'price_num' => '67,500', 'per' => 'one-time',
+                     'items' => ['Unlimited users on a LAN','All Silver features','Connected banking & payroll','Priority partner support','1 year free upgrades',
+                                 ['label'=>'Browser/mobile access (add Cloud)','no'=>true]],
+                     'cta_label' => 'Get Gold', 'popular' => true],
+                    ['name' => 'Cloud add-on', 'blurb' => 'Add browser & mobile access on top of any Silver / Gold license.',
+                     'price_cur' => 'रु', 'price_num' => '600', 'per' => '/user / month',
+                     'items' => ['Use Tally from any browser','Daily encrypted backups','99.9% uptime SLA','Region-locked Mumbai datacentre','Min 12-month commit'],
+                     'cta_label' => 'Talk to sales'],
+                ]),
+                'sample_reviews_json' => json_encode([
+                    ['name'=>'Sushant K.', 'role'=>'Director of Finance', 'industry'=>'Trading', 'size'=>'11–50',
+                     'time'=>'3 weeks ago', 'rating'=>5,
+                     'title'=>'3 years in — still the fastest way to close month-end VAT.',
+                     'body'=>'We migrated from a manual Excel process to Tally Gold in 2023. Our month-end VAT filing went from 5 days to half a day. The keyboard shortcuts take a week to learn but after that, our accountant posts at machine speed. Multi-godown was the dealbreaker for us — we run 4 warehouses.',
+                     'pros'=>'Speed of entry, VAT auto-reconciliation, partner support is excellent in Kathmandu.',
+                     'cons'=>'Mobile app is read-only. We are paying for the Cloud add-on just to give the boss read access on his phone.',
+                     'tags'=>['Multi-godown','VAT','Month-end close','Switched from Excel']],
+                    ['name'=>'Anita P.', 'role'=>'Chartered Accountant', 'industry'=>'Independent practice', 'size'=>'1',
+                     'time'=>'2 months ago', 'rating'=>5,
+                     'title'=>'I manage 32 client books on a single laptop.',
+                     'body'=>'As a sole CA, I need software that respects my time. Tally Prime lets me switch between client companies in a key-press, audit-lock posted entries, and export GST/VAT-ready files. The license pays for itself in one billing cycle.',
+                     'pros'=>'Multi-company switching, granular user roles, exportable audit trail.',
+                     'cons'=>'No native cloud sync between offices — I use Google Drive as a workaround.',
+                     'tags'=>['Multi-company','Audit trail','Sole practitioner']],
+                    ['name'=>'Rohan B.', 'role'=>'IT Manager', 'industry'=>'Hotel', 'size'=>'51–200',
+                     'time'=>'1 month ago', 'rating'=>3,
+                     'title'=>'Great accounting, but not really an ERP.',
+                     'body'=>'Tally is rock-solid for our books and inventory but we ended up running it alongside a separate PMS for room booking and a separate HR tool. The "ERP" framing is a stretch — for a hotel chain, evaluate Synergy or Odoo if you need everything in one place.',
+                     'pros'=>'Bookkeeping is bulletproof. The TDS & payroll exports save a lot of manual work.',
+                     'cons'=>'No native PMS, F&B costing or housekeeping. Customisation needs a TDL developer.',
+                     'tags'=>['Hospitality','Needed PMS add-on','TDL customisation']],
+                ]),
+                'faq_json'           => json_encode([
+                    ['q'=>'Does Tally Prime support Nepal IRD VAT return formats?',
+                     'a'=>'Yes. Tally Prime ships with built-in Nepal VAT configuration including the IRD-prescribed monthly return format, sales register, purchase register and adjustment vouchers. Returns can be exported as Excel for upload to the IRD portal.'],
+                    ['q'=>'Can I use Tally Prime on a Mac or from a browser?',
+                     'a'=>'Tally Prime is a Windows-native desktop application. To use it on Mac or via a browser, you need the <strong>Tally on Cloud</strong> add-on (≈ रु 600 per user/month), which streams your Tally environment from a Mumbai datacentre.'],
+                    ['q'=>'Is the data secure if I run it on-premise?',
+                     'a'=>'Yes — your data lives on your own server / PC. Tally encrypts the company files and supports role-based user permissions plus an edit-log audit trail (Gold edition). For business continuity we recommend pairing on-premise with a daily off-site or cloud backup.'],
+                    ['q'=>'How does pricing compare to Swastik or Odoo?',
+                     'a'=>'Tally Silver (single user) at रु 22,500 sits between Swastik (रु 18,000) and Odoo Enterprise ($31/user/month). Tally\'s TCO over 5 years is usually the lowest because it\'s a one-time license; Odoo wins if you specifically need open-source customisation or multi-user web access from day one.'],
+                    ['q'=>'Will my staff need formal training?',
+                     'a'=>'Most accountants in Nepal are already familiar with Tally. For new users, plan on 2–5 days of partner-led onboarding. Authorised partners in Kathmandu, Pokhara, Biratnagar and Butwal run regular open batches.'],
+                    ['q'=>'Can it integrate with my e-commerce or POS?',
+                     'a'=>'Yes — through Tally\'s XML/HTTP API, partner connectors are available for Daraz, Sastodeal, eSewa, Khalti and most POS systems. Custom connectors are written in TDL.'],
+                ]),
+                'specs_json'         => json_encode([
+                    ['title'=>'Deployment & access', 'rows'=>[
+                        'Deployment'        => 'On-premise (Windows) · optional Tally on Cloud',
+                        'Operating system'  => 'Windows 10 / 11 · Windows Server 2016+',
+                        'Mobile app'        => 'iOS & Android (read-only dashboards)',
+                        'Browser access'    => 'Via Tally on Cloud add-on only',
+                        'Offline mode'      => 'Yes — works fully offline',
+                    ]],
+                    ['title'=>'Vendor & product', 'rows'=>[
+                        'Vendor'                => 'Tally Solutions Pvt. Ltd.',
+                        'Headquartered in'      => 'Bengaluru, India 🇮🇳',
+                        'Founded'               => '1986',
+                        'Maturity'              => '30+ years · Tally Prime since 2020',
+                        'Customers worldwide'   => '2,000,000+',
+                        'Partners in Nepal'     => '14 (Kathmandu, Pokhara, Biratnagar, Butwal)',
+                    ]],
+                    ['title'=>'Integrations & API', 'rows'=>[
+                        'Public API'      => 'Yes — XML-based HTTP/ODBC API',
+                        'SDK'             => 'TDL (Tally Definition Language) for customisation',
+                        'Banking'         => 'NIC ASIA, NIBL, HBL, Nabil, Standard Chartered',
+                        'E-commerce'      => 'Daraz, Sastodeal (via partner connectors)',
+                        'Payment gateways'=> 'eSewa, Khalti, IME Pay (via partner connectors)',
+                        'Office suite'    => 'Excel, Word export native',
+                    ]],
+                    ['title'=>'Compliance & security', 'rows'=>[
+                        'Nepal IRD VAT return'  => 'Built-in',
+                        'India GST e-invoicing' => 'Built-in (with QR)',
+                        'Audit trail'           => 'Edit-log lock available (Gold)',
+                        'Backup'                => 'Manual + scheduled · cloud backup with add-on',
+                        'User roles'            => 'Granular role-based permissions',
+                        'Data residency'        => 'On-premise (you control)',
+                    ]],
+                    ['title'=>'Training & support', 'rows'=>[
+                        'Onboarding'         => 'Local partner-led, 2–5 days typical',
+                        'Support hours'      => 'Sun–Fri, 10:00–18:00 NPT (partner)',
+                        'Languages supported'=> 'English, Nepali, Hindi',
+                        'Knowledge base'     => 'help.tallysolutions.com (English)',
+                        'Community'          => 'Active forum & Telegram groups',
+                    ]],
+                ]),
             ],
             'industries' => ['Trading', 'Small Manufacturing', 'Hotels', 'Online Stores'],
             'categories' => ['Accounting', 'Inventory'],
@@ -602,6 +768,10 @@ add_action('manage_software_posts_custom_column', function ($col, $post_id) {
    6. (Optional) flush rewrite rules once after first seed
    ================================================================= */
 add_action('init', function () {
+    if (defined('WP_INSTALLING') && WP_INSTALLING) return;
+    if (function_exists('wp_installing') && wp_installing()) return;
+    if (!function_exists('is_blog_installed') || !is_blog_installed()) return;
+
     if (get_option('inp_rewrite_flushed') !== '1') {
         flush_rewrite_rules(false);
         update_option('inp_rewrite_flushed', '1');
@@ -609,16 +779,119 @@ add_action('init', function () {
 }, 99);
 
 /* =================================================================
-   7. Auto-activate the Infer Nepal theme on first boot
+   7b. Auto-create editable pages (Home, About, Contact, Vendors) so
+       admins can compose / edit them entirely in the Gutenberg editor.
+       Idempotent — only runs if the option flag isn't set.
    ================================================================= */
-add_action('after_setup_theme', function () {
-    if (get_option('inp_theme_activated') === '1') return;
-    $theme = wp_get_theme('infer-nepal');
-    if ($theme->exists() && !is_wp_error($theme->errors())) {
-        $current = wp_get_theme();
-        if ($current->get_stylesheet() !== 'infer-nepal') {
-            switch_theme('infer-nepal');
-        }
-        update_option('inp_theme_activated', '1');
+add_action('init', function () {
+    if (defined('WP_INSTALLING') && WP_INSTALLING) return;
+    if (function_exists('wp_installing') && wp_installing()) return;
+    if (!function_exists('is_blog_installed') || !is_blog_installed()) return;
+    if (get_option('inp_pages_seeded') === '1') return;
+
+    /* Build a Home page made entirely of pattern references — admins can
+     * insert/remove/reorder patterns from the block editor, or click any
+     * pattern to detach + edit its individual blocks. */
+    $home_blocks = <<<HTML
+<!-- wp:pattern {"slug":"infer-nepal/hero"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/industry-tiles"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/top-rated"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/featured-school"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/compare-teaser"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/pricing-tiers"} /-->
+<!-- wp:pattern {"slug":"infer-nepal/vendor-stats"} /-->
+HTML;
+
+    $pages = [
+        'home' => [
+            'title'   => 'Home',
+            'content' => $home_blocks,
+        ],
+        'about' => [
+            'title'   => 'About Infer Nepal',
+            'content' => '<!-- wp:heading -->' .
+                '<h2>About Infer Nepal</h2>' .
+                '<!-- /wp:heading -->' .
+                '<!-- wp:paragraph --><p>Infer Nepal is the independent B2B software discovery platform for Nepali businesses. We publish verified user reviews, transparent pricing and editor scores. No pay-to-play rankings.</p><!-- /wp:paragraph -->' .
+                '<!-- wp:heading {"level":3} --><h3>How we score</h3><!-- /wp:heading -->' .
+                '<!-- wp:paragraph --><p>Reviews are verified via work email + invoice. Editor scores combine 1,200+ user reviews per product with 14 hands-on feature tests.</p><!-- /wp:paragraph -->',
+        ],
+        'contact' => [
+            'title'   => 'Contact',
+            'content' => '<!-- wp:heading --><h2>Contact us</h2><!-- /wp:heading -->' .
+                '<!-- wp:paragraph --><p>Reach our editorial team at <a href="mailto:hello@infernepal.com">hello@infernepal.com</a>.</p><!-- /wp:paragraph -->' .
+                '<!-- wp:paragraph --><p>For vendor listings and partnership enquiries, email <a href="mailto:vendors@infernepal.com">vendors@infernepal.com</a>.</p><!-- /wp:paragraph -->',
+        ],
+        'vendors' => [
+            'title'   => 'List your software',
+            'content' => '<!-- wp:pattern {"slug":"infer-nepal/vendor-stats"} /-->' .
+                '<!-- wp:heading --><h2>Why list with Infer Nepal?</h2><!-- /wp:heading -->' .
+                '<!-- wp:paragraph --><p>Reach Nepali decision-makers actively shopping for ERP, accounting, school, hotel and HR tools. Premium and Top listings deliver verified demo requests directly to your sales team.</p><!-- /wp:paragraph -->',
+        ],
+    ];
+
+    $home_id = 0;
+    foreach ($pages as $slug => $p) {
+        $existing = get_page_by_path($slug);
+        if ($existing) { if ($slug === 'home') $home_id = $existing->ID; continue; }
+        $id = wp_insert_post([
+            'post_title'   => $p['title'],
+            'post_name'    => $slug,
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_content' => $p['content'],
+        ]);
+        if ($id && !is_wp_error($id) && $slug === 'home') $home_id = $id;
     }
-}, 5);
+
+    // Set Home as the static front page
+    if ($home_id) {
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', (int) $home_id);
+    }
+
+    // Permalinks: pretty URLs so /software/<slug>/ works
+    if (!get_option('permalink_structure')) {
+        update_option('permalink_structure', '/%postname%/');
+    }
+
+    update_option('inp_pages_seeded', '1');
+}, 25);
+
+/* =================================================================
+   7. Auto-activate the Infer Nepal theme.
+   We use pre_option_* filters so the override applies on the SAME
+   request — switch_theme() in after_setup_theme is too late
+   (the theme is already loaded by then).
+   ================================================================= */
+add_filter('pre_option_template', 'inp_force_theme', 10, 1);
+add_filter('pre_option_stylesheet', 'inp_force_theme', 10, 1);
+function inp_force_theme($value) {
+    // Don't interfere during the WordPress installer — the options table
+    // doesn't exist yet, and the installer needs the bundled theme.
+    if (defined('WP_INSTALLING') && WP_INSTALLING) return $value;
+    if (function_exists('wp_installing') && wp_installing()) return $value;
+
+    // Avoid recursion: pre_option_* filters run inside get_option().
+    static $depth = 0;
+    if ($depth > 0) return $value;
+    $depth++;
+    $userChose = get_option('inp_theme_user_chose');
+    $depth--;
+    if ($userChose === '1') return $value;
+
+    $theme_dir = WP_CONTENT_DIR . '/themes/infer-nepal';
+    if (is_dir($theme_dir) && file_exists($theme_dir . '/style.css')) {
+        return 'infer-nepal';
+    }
+    return $value;
+}
+
+// If the admin manually picks a different theme, stop forcing ours.
+add_action('switch_theme', function ($new_name, $new_theme) {
+    if ($new_theme && $new_theme->get_stylesheet() !== 'infer-nepal') {
+        update_option('inp_theme_user_chose', '1');
+    } else {
+        delete_option('inp_theme_user_chose');
+    }
+}, 10, 2);

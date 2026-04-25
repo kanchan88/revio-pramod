@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Pricing tiers (3 plans)',
-    'description' => 'Three-column pricing block — edit plan name, price and features inline.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['pricing', 'plans', 'tiers'],
-    'content'     => <<<HTML
+/**
+ * Title: Pricing tiers (3 plans)
+ * Slug: infer-nepal/pricing-tiers
+ * Categories: infer-nepal
+ * Description: Three-column pricing block — edit plan name, price and features inline.
+ * Keywords: pricing, plans, tiers
+ */
+?>
 <!-- wp:html -->
 <section>
   <div class="container">
@@ -57,5 +59,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

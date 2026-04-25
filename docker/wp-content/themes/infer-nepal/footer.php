@@ -4,7 +4,7 @@
     <div class="f-grid">
       <div>
         <a href="<?= esc_url(home_url('/')) ?>" class="brand">
-          <?php if (has_custom_logo()) the_custom_logo(); else : ?>
+          <?php if (has_custom_logo()) : the_custom_logo(); else : ?>
             <img src="<?= esc_url(get_theme_file_uri('assets/logo.png')) ?>" alt="<?php bloginfo('name'); ?>" class="brand-logo" />
           <?php endif; ?>
         </a>

@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Compare teaser',
-    'description' => 'Side-by-side comparison promo with sample columns.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['compare', 'teaser'],
-    'content'     => <<<HTML
+/**
+ * Title: Compare teaser
+ * Slug: infer-nepal/compare-teaser
+ * Categories: infer-nepal
+ * Description: Side-by-side comparison promo with sample columns.
+ * Keywords: compare, teaser
+ */
+?>
 <!-- wp:html -->
 <section>
   <div class="container">
@@ -44,5 +46,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

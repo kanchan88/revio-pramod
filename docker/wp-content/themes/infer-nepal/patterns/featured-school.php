@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Featured for an industry (live list)',
-    'description' => 'Vertical software list — defaults to School & College. Change the industry slug to repurpose.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['list', 'industry', 'featured'],
-    'content'     => <<<HTML
+/**
+ * Title: Featured for an industry (live list)
+ * Slug: infer-nepal/featured-school
+ * Categories: infer-nepal
+ * Description: Vertical software list — defaults to School & College. Change the industry slug to repurpose.
+ * Keywords: list, industry, featured
+ */
+?>
 <!-- wp:html -->
 <section>
   <div class="container">
@@ -19,5 +21,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

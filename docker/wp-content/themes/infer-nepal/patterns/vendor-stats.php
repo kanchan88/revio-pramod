@@ -1,10 +1,12 @@
 <?php
-return [
-    'title'       => 'Vendor stats CTA (List your software)',
-    'description' => 'Dark "list your software" panel — numbers come from Customizer → Brand → Platform stats.',
-    'categories'  => ['infer-nepal'],
-    'keywords'    => ['vendors', 'stats', 'cta'],
-    'content'     => <<<HTML
+/**
+ * Title: Vendor stats CTA (List your software)
+ * Slug: infer-nepal/vendor-stats
+ * Categories: infer-nepal
+ * Description: Dark "list your software" panel — numbers come from Customizer → Brand → Platform stats.
+ * Keywords: vendors, stats, cta
+ */
+?>
 <!-- wp:html -->
 <section style="padding-top: 0;">
   <div class="container">
@@ -19,5 +21,3 @@ return [
   </div>
 </section>
 <!-- /wp:html -->
-HTML
-];

@@ -26,7 +26,7 @@ services:
       db:
         condition: service_healthy
     ports:
-      - "8080:80"
+      - "8090:80"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wp
@@ -34,8 +34,8 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: "1"
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME', 'http://localhost:8080');
-        define('WP_SITEURL', 'http://localhost:8080');
+        define('WP_HOME', 'http://localhost:8090');
+        define('WP_SITEURL', 'http://localhost:8090');
     volumes:
       - wp_data:/var/www/html
       # Auto-loaded plugin: registers Software CPT + seeds products

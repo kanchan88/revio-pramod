@@ -43,11 +43,11 @@ docker compose logs -f wordpress
 
 | URL                                | What                                |
 |------------------------------------|-------------------------------------|
-| http://localhost:8080               | WordPress front-end                 |
-| http://localhost:8080/wp-admin      | Admin dashboard                     |
+| http://localhost:8090               | WordPress front-end                 |
+| http://localhost:8090/wp-admin      | Admin dashboard                     |
 | http://localhost:8081               | phpMyAdmin (root / `rootpass`)      |
 
-The first time you open `http://localhost:8080` WordPress will run its 5-second
+The first time you open `http://localhost:8090` WordPress will run its 5-second
 install wizard — pick a site title (e.g. "Infer Nepal"), an admin username and
 password, click **Install WordPress**.
 
@@ -87,8 +87,8 @@ docker compose down -v
 
 ### Common issues
 
-* **Port 8080 already in use** — change `"8080:80"` in `docker-compose.yml`
-  to a free port (e.g. `"9080:80"`) and re-run `docker compose up -d`.
+* **Port 8090 already in use** — change `"8090:80"` in `docker-compose.yml`
+  to a free port (e.g. `"9091:80"`) and re-run `docker compose up -d`.
 * **`docker compose` says command not found** — Docker Desktop isn't running.
   Open it from the Start menu.
 * **WordPress shows a database connection error** — wait 30 more seconds
@@ -100,7 +100,7 @@ docker compose down -v
 
 | Service     | Image                          | URL                          | Notes                                  |
 |-------------|--------------------------------|------------------------------|----------------------------------------|
-| WordPress   | `wordpress:6.5-php8.2-apache`  | http://localhost:8080         | Site (admin at `/wp-admin`)            |
+| WordPress   | `wordpress:6.5-php8.2-apache`  | http://localhost:8090         | Site (admin at `/wp-admin`)            |
 | MariaDB     | `mariadb:10.11`                | `localhost:3307` (mapped)    | DB name `wordpress`, user `wp`/`wppass`|
 | phpMyAdmin  | `phpmyadmin:5.2`               | http://localhost:8081         | DB browser, root user pre-filled       |
 
@@ -120,7 +120,7 @@ The seed runs **once** — it sets the `inp_products_seeded` option flag so re-r
 the stack won't duplicate. Delete that option from `wp_options` to re-seed.
 
 Logos from `wp-content/uploads/logos/` are served at
-`http://localhost:8080/wp-content/uploads/logos/<file>` and are referenced from each
+`http://localhost:8090/wp-content/uploads/logos/<file>` and are referenced from each
 product's `logo_url` meta field.
 
 ## First run
@@ -132,7 +132,7 @@ docker compose up -d
 
 Wait ~30 seconds for MariaDB to initialize, then visit:
 
-* **http://localhost:8080** — finish the WordPress install wizard (pick any
+* **http://localhost:8090** — finish the WordPress install wizard (pick any
   site title, admin user/password). Once installed, head to `/wp-admin/edit.php?post_type=software`
   and you'll see the seeded software list.
 * **http://localhost:8081** — phpMyAdmin (root / rootpass) to browse the raw tables:
@@ -159,7 +159,7 @@ docker exec -it infernepal_wp bash
 
 # Re-trigger the seed (only do this once you've deleted the flag)
 docker exec -it infernepal_wp wp option delete inp_products_seeded --allow-root
-# then refresh any page on http://localhost:8080
+# then refresh any page on http://localhost:8090
 ```
 
 ## Database schema (the relevant slice)
@@ -193,11 +193,11 @@ ORDER BY p.post_title;
 
 The CPT registers with `show_in_rest = true`, so once you've finished the install:
 
-* `GET http://localhost:8080/wp-json/wp/v2/software` — list software
-* `GET http://localhost:8080/wp-json/wp/v2/software/<id>` — single software (incl. meta)
-* `GET http://localhost:8080/wp-json/wp/v2/industry` — industries
-* `GET http://localhost:8080/wp-json/wp/v2/sw_category` — categories
-* `GET http://localhost:8080/wp-json/wp/v2/country` — countries
+* `GET http://localhost:8090/wp-json/wp/v2/software` — list software
+* `GET http://localhost:8090/wp-json/wp/v2/software/<id>` — single software (incl. meta)
+* `GET http://localhost:8090/wp-json/wp/v2/industry` — industries
+* `GET http://localhost:8090/wp-json/wp/v2/sw_category` — categories
+* `GET http://localhost:8090/wp-json/wp/v2/country` — countries
 
 That's how the static `infernepal.com` site (the HTML in the parent folder) can later
 pull live data instead of hard-coded markup.
