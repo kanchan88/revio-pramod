@@ -607,3 +607,18 @@ add_action('init', function () {
         update_option('inp_rewrite_flushed', '1');
     }
 }, 99);
+
+/* =================================================================
+   7. Auto-activate the Infer Nepal theme on first boot
+   ================================================================= */
+add_action('after_setup_theme', function () {
+    if (get_option('inp_theme_activated') === '1') return;
+    $theme = wp_get_theme('infer-nepal');
+    if ($theme->exists() && !is_wp_error($theme->errors())) {
+        $current = wp_get_theme();
+        if ($current->get_stylesheet() !== 'infer-nepal') {
+            switch_theme('infer-nepal');
+        }
+        update_option('inp_theme_activated', '1');
+    }
+}, 5);

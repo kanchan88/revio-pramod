@@ -40,6 +40,8 @@ services:
       - wp_data:/var/www/html
       # Auto-loaded plugin: registers Software CPT + seeds products
       - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      # Custom theme — Infer Nepal (mounted alongside the default themes)
+      - ./wp-content/themes/infer-nepal:/var/www/html/wp-content/themes/infer-nepal
       # Static assets (vendor logos) accessible via /wp-content/uploads/logos/*
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
 
