@@ -19,7 +19,7 @@ services:
       retries: 5
 
   wordpress:
-    image: wordpress:6.5-php8.2-apache
+    image: wordpress:php8.2-apache
     container_name: infernepal_wp
     restart: unless-stopped
     depends_on:

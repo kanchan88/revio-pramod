@@ -79,6 +79,7 @@ require_once get_theme_file_path('inc/block-patterns.php');
 require_once get_theme_file_path('inc/helpers.php');
 require_once get_theme_file_path('inc/nav-walker.php');
 require_once get_theme_file_path('inc/blocks.php');
+require_once get_theme_file_path('inc/beaver-builder.php');
 
 /* =================================================================
    Body class — adds CPT/taxonomy info so styles can target pages

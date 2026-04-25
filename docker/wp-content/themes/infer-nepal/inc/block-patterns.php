@@ -123,6 +123,132 @@ add_action('init', function () {
         return ob_get_clean();
     });
 
+    /* [inp_nav] — renders the primary nav (brand + mega menu + actions).
+     * Used inside parts/header.html so block-template pages get the same
+     * mega-menu nav as PHP templates that call get_header(). */
+    add_shortcode('inp_nav', function () {
+        ob_start(); ?>
+        <div class="nav-wrap"><div class="container">
+          <nav class="primary">
+            <a href="<?= esc_url(home_url('/')) ?>" class="brand">
+              <?php if (has_custom_logo()) : the_custom_logo(); else : ?>
+                <img src="<?= esc_url(get_theme_file_uri('assets/logo.png')) ?>" alt="<?php bloginfo('name'); ?>" class="brand-logo" />
+              <?php endif; ?>
+            </a>
+            <button class="menu-toggle" aria-label="Open menu">
+              <svg class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+              <svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <div class="nav-links" id="primary-nav-links">
+              <?php
+              if (has_nav_menu('primary')) {
+                  wp_nav_menu([
+                      'theme_location' => 'primary',
+                      'container'      => false,
+                      'items_wrap'     => '%3$s',
+                      'walker'         => new INP_Mega_Walker(),
+                      'depth'          => 2,
+                      'fallback_cb'    => false,
+                  ]);
+              } else {
+                  inp_render_default_nav();
+              }
+              ?>
+            </div>
+            <button class="search-trigger" aria-label="Open search">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <span class="label">Search ERP, school, hotel, accounting…</span>
+              <span class="kbd">⌘K</span>
+            </button>
+            <div class="nav-actions">
+              <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              </button>
+              <a href="<?= esc_url(wp_login_url()) ?>" class="btn ghost">Sign in</a>
+            </div>
+          </nav>
+        </div></div>
+        <?php
+        return ob_get_clean();
+    });
+
+    /* [inp_footer] — full editable footer (uses Customizer + nav menus) */
+    add_shortcode('inp_footer', function () {
+        ob_start(); ?>
+        <footer class="site"><div class="container">
+          <div class="f-grid">
+            <div>
+              <a href="<?= esc_url(home_url('/')) ?>" class="brand">
+                <?php if (has_custom_logo()) : the_custom_logo(); else : ?>
+                  <img src="<?= esc_url(get_theme_file_uri('assets/logo.png')) ?>" alt="<?php bloginfo('name'); ?>" class="brand-logo" />
+                <?php endif; ?>
+              </a>
+              <p style="color:var(--text-muted); font-size:13px; margin-top:12px; max-width:320px;">
+                <?= esc_html(get_theme_mod('inp_footer_blurb', "Nepal's independent B2B software discovery platform.")) ?>
+              </p>
+              <form class="newsletter" action="#" method="post">
+                <input name="email" placeholder="you@company.com" />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+            <?php
+            $cols = [
+                'footer-industries' => 'Industries',
+                'footer-categories' => 'Categories',
+                'footer-vendors'    => 'For vendors',
+                'footer-company'    => 'Company',
+            ];
+            foreach ($cols as $loc => $heading) {
+                echo '<div><h5>' . esc_html($heading) . '</h5>';
+                if (has_nav_menu($loc)) {
+                    wp_nav_menu(['theme_location'=>$loc,'container'=>false,'depth'=>1,'items_wrap'=>'<ul>%3$s</ul>']);
+                } else {
+                    echo '<ul>';
+                    if ($loc === 'footer-industries') {
+                        foreach (get_terms(['taxonomy'=>'industry','hide_empty'=>false,'number'=>8]) as $t)
+                            echo '<li><a href="'.esc_url(get_term_link($t)).'">'.esc_html($t->name).'</a></li>';
+                    } elseif ($loc === 'footer-categories') {
+                        foreach (get_terms(['taxonomy'=>'sw_category','hide_empty'=>false,'number'=>8]) as $t)
+                            echo '<li><a href="'.esc_url(get_term_link($t)).'">'.esc_html($t->name).'</a></li>';
+                    } elseif ($loc === 'footer-vendors') {
+                        echo '<li><a href="#">List your software</a></li><li><a href="#">Premium listing</a></li><li><a href="#">Lead generation</a></li>';
+                    } else {
+                        echo '<li><a href="'.esc_url(home_url('/about-infer-nepal/')).'">About</a></li><li><a href="'.esc_url(home_url('/contact/')).'">Contact</a></li><li><a href="#">How we score</a></li>';
+                    }
+                    echo '</ul>';
+                }
+                echo '</div>';
+            }
+            ?>
+          </div>
+          <div class="f-bottom">
+            <span><?= wp_kses_post(get_theme_mod('inp_footer_copyright', '© ' . date('Y') . ' Infer Nepal · infernepal.com')) ?></span>
+            <span><?= esc_html(get_theme_mod('inp_footer_tagline', 'Made in Kathmandu 🇳🇵')) ?></span>
+          </div>
+        </div></footer>
+        <div class="menu-backdrop" aria-hidden="true"></div>
+        <?php
+        return ob_get_clean();
+    });
+
+    /* [inp_promo_strip] — top promotional strip from Customizer */
+    add_shortcode('inp_promo_strip', function () {
+        if (!get_theme_mod('inp_promo_enabled', true)) return '';
+        ob_start(); ?>
+        <div class="promo-strip">
+          <a href="<?= esc_url(get_theme_mod('inp_promo_cta_url', '#')) ?>">
+            <span class="live-dot"></span>
+            <span class="tag"><?= esc_html(get_theme_mod('inp_promo_tag', 'New')) ?></span>
+            <span class="msg"><?= wp_kses_post(get_theme_mod('inp_promo_message', 'Top 10 ERP for Nepali SMBs — 2026 report.')) ?></span>
+            <span class="cta"><?= esc_html(get_theme_mod('inp_promo_cta_text', 'Read the report')) ?>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+        <?php
+        return ob_get_clean();
+    });
+
     /* [inp_vendor_stats] — pulls numbers from Customizer */
     add_shortcode('inp_vendor_stats', function () {
         $stats = [

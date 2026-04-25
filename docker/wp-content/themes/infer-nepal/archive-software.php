@@ -46,6 +46,16 @@ $countries  = get_terms(['taxonomy' => 'country',     'hide_empty' => false]);
   </nav>
 </div>
 
+<?php
+// If an admin has created a "Industry: <Name>" / "Category: <Name>" /
+// "Country: <Name>" Page, render its BB-designed content here as the hero.
+$landing = $current_term ? inp_get_term_landing_page($current_term) : null;
+if ($landing && !empty($landing->post_content)) :
+    echo '<div class="bb-landing">';
+    echo apply_filters('the_content', $landing->post_content);
+    echo '</div>';
+else :
+?>
 <section class="cat-hero">
   <div class="container">
     <div class="row">
@@ -79,6 +89,7 @@ $countries  = get_terms(['taxonomy' => 'country',     'hide_empty' => false]);
     </div>
   </div>
 </section>
+<?php endif; ?>
 
 <!-- Active-filter chip strip + sort -->
 <?php
@@ -188,8 +199,8 @@ if (!empty($_GET['min_rating'])) $active_chips .= '<span class="chip-active">≥
 
         <div class="filter-group">
           <h6>Review score</h6>
-          <?php foreach ([4.5=>'4.5 & up', 4=>'4.0 & up', 3.5=>'3.5 & up'] as $v=>$l): ?>
-            <label><span class="left"><input type="radio" name="min_rating" value="<?= $v ?>" <?= ((string)inp_get('min_rating')===(string)$v)?'checked':'' ?> /> <?= esc_html($l) ?></span></label>
+          <?php foreach (['4.5'=>'4.5 & up', '4'=>'4.0 & up', '3.5'=>'3.5 & up'] as $v=>$l): ?>
+            <label><span class="left"><input type="radio" name="min_rating" value="<?= esc_attr($v) ?>" <?= (inp_get('min_rating')===$v)?'checked':'' ?> /> <?= esc_html($l) ?></span></label>
           <?php endforeach; ?>
           <label><span class="left"><input type="radio" name="min_rating" value="" <?= inp_get('min_rating')===''?'checked':'' ?> /> Any</span></label>
         </div>
