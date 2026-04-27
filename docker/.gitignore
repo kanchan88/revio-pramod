@@ -1,8 +1,0 @@
-# Docker volumes are managed by Docker — never commit them
-data/
-db_data/
-wp_data/
-
-# Local env overrides
-.env
-docker-compose.override.yml
